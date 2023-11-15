@@ -26,7 +26,7 @@ export default function StoreLocationScreen({ item, index }) {
     const ListHeader = () => {
         return (
             <View>
-                <View style={{ backgroundColor: "#e9d8a6", flexDirection: "row" }}>
+                <View style={{ backgroundColor: "#fff", flexDirection: "row" }}>
                     <View>
                         <Ionicons name="search-outline" size={20} color="#000" style={styles.icon} />
                         <TextInput style={styles.input} placeholder="Tìm kiếm" />
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 16,
         width: WIDTH * 0.7,
         height: 40,
-        backgroundColor: "#FFF",
+        backgroundColor: "#EEE",
         borderRadius: 10,
     },
 
