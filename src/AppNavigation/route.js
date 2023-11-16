@@ -9,14 +9,30 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from "../Screens/HomeScreen";
 import BookingScreen from "../Screens/BookingScreen";
 import StoreLocationScreen from "../Screens/StoreLocationScreen";
+import StoreLocationDetail from "../Screens/StoreLocationDetail";
 import VoucherScreen from "../Screens/VoucherScreen";
 import AnyScreen from "../Screens/AnyScreen";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // import Component
 
 const Tab = createBottomTabNavigator();
 
 export default function AppNavigation() {
+    const StoreStackScreen = () => {
+        const StoreStack = createNativeStackNavigator();
+        return (
+            <StoreStack.Navigator>
+                <StoreStack.Screen
+                    name="StoreLocationScreen"
+                    component={StoreLocationScreen}
+                    options={{ headerShown: false }}
+                />
+                <StoreStack.Screen name="StoreLocationDetail" component={StoreLocationDetail} />
+            </StoreStack.Navigator>
+        );
+    };
+
     return (
         <NavigationContainer>
             <Tab.Navigator
@@ -45,7 +61,7 @@ export default function AppNavigation() {
             >
                 <Tab.Screen name="Home" component={HomeScreen}></Tab.Screen>
                 <Tab.Screen name="Booking" component={BookingScreen}></Tab.Screen>
-                <Tab.Screen name="Store" component={StoreLocationScreen}></Tab.Screen>
+                <Tab.Screen name="Store" component={StoreStackScreen}></Tab.Screen>
                 <Tab.Screen name="Voucher" component={VoucherScreen}></Tab.Screen>
                 <Tab.Screen name="Any" component={AnyScreen}></Tab.Screen>
             </Tab.Navigator>
