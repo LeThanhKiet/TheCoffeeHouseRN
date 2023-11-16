@@ -4,7 +4,7 @@ import React from "react";
 const Header = () => {
     return (
         <View>
-            <Text>Kiệt ơi, Cloudfee nha</Text>
+            <Text>Name ơi, Cloudfee nha</Text>
         </View>
     );
 };

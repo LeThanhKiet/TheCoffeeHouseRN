@@ -9,6 +9,8 @@ import BookingScreen from "../Screens/BookingScreen";
 import StoreLocationScreen from "../Screens/StoreLocationScreen";
 import VoucherScreen from "../Screens/VoucherScreen";
 
+import StoreLocationDetail from "../Screens/StoreLocationDetail";
+
 // import Component
 
 import Header from "../Components/Header";
@@ -59,6 +61,7 @@ const AppNavigation = () => {
                         <Header />;
                     }}
                 />
+                <StoreLocationStack.Screen name="StoreLocationDetails" component={StoreLocationDetail} />
             </StoreLocationStack.Navigator>
         );
     };

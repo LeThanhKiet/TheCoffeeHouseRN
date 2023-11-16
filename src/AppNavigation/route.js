@@ -43,11 +43,11 @@ export default function AppNavigation() {
                     },
                 })}
             >
-                <Tab.Screen name="Home" component={HomeScreen}></Tab.Screen>
+                <Tab.Screen name="Home"  component={HomeScreen}></Tab.Screen>
                 <Tab.Screen name="Booking" component={BookingScreen}></Tab.Screen>
                 <Tab.Screen name="Store" component={StoreLocationScreen}></Tab.Screen>
                 <Tab.Screen name="Voucher" component={VoucherScreen}></Tab.Screen>
-                <Tab.Screen name="Any" component={AnyScreen}></Tab.Screen>
+                <Tab.Screen name="Any"  component={AnyScreen}></Tab.Screen>
             </Tab.Navigator>
         </NavigationContainer>
     );

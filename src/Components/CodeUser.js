@@ -15,7 +15,7 @@ export default function CodeUser() {
                         <Ionicons name="chevron-down-outline" size={20} color="red" />
                         <Text style={{ color: "red" }}>Tích điểm</Text>
                     </View>
-                    <Text style={[styles.codeInfo, { fontSize: 16, fontWeight: "bold" }]}>Kiệt Lê</Text>
+                    <Text style={[styles.codeInfo, { fontSize: 16, fontWeight: "bold" }]}>Name</Text>
                     <Text style={[styles.codeInfo, { marginBottom: 24 }]}>68 BEAN</Text>
                     <View style={styles.code}>
                         <Image
