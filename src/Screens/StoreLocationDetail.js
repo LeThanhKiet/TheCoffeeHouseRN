@@ -53,4 +53,62 @@ export default function StoreLocationDetail({ route, navigation }) {
 const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    image: {
+        width: WIDTH,
+        height: HEIGHT * 0.36,
+        resizeMode: "cover",
+    },
+    imageSingle: {
+        width: WIDTH * 0.8,
+        height: HEIGHT * 0.36,
+        resizeMode: "contain",
+    },
+    title: {
+        padding: 16,
+        borderBottomWidth: 0.5,
+        borderBottomColor: "#CCC",
+    },
+    button: {
+        margin: 16,
+        padding: 16,
+        backgroundColor: "#FF7900",
+        borderRadius: 8,
+    },
+    btnName: {
+        color: "#FFF",
+        textAlign: "center",
+    },
+    name: {
+        fontSize: 12,
+        textTransform: "uppercase",
+        fontWeight: "bold",
+    },
+    store: {
+        color: "#000",
+        fontSize: 20,
+        fontWeight: "bold",
+    },
+    info: {
+        marginVertical: 8,
+        flexDirection: "row",
+        justifyContent: "space-between",
+    },
+    icon: {
+        marginRight: 8,
+        padding: 12,
+        justifyContent: "center",
+        alignContent: "center",
+        width: 46,
+        height: 46,
+        backgroundColor: "#EEE",
+        borderRadius: 8,
+    },
+    infoStore: {
+        width: 300,
+        textAlignVertical: "center",
+        color: "#000",
+        borderBottomWidth: 1,
+        borderBottomColor: "#EEE",
+    },
+});
