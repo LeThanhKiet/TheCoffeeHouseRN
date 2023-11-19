@@ -1,0 +1,64 @@
+{
+    "HiTea": [
+        {
+            "Title": "Trà đào cam sả - Nóng",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/tdcs-nong_288997_400x400.jpg",
+            "Price": "59.000",
+            "ID": "1"
+        },
+        {
+            "Title": "Trà hạt sen - Nóng",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/tra-sen-nong_025153_400x400.jpg",
+            "Price": "49.000",
+            "ID": "2"
+        },
+        {
+            "Title": "Trà đào cam sả - Đá",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/1669736819_tra-dao-cam-sa-da_400x400.png",
+            "Price": "59.000",
+            "ID": "3"
+        },
+        {
+            "Title": "Trà hạt sen - Đá",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/tra-sen_905594_400x400.jpg",
+            "Price": "49.000",
+            "ID": "4"
+        },
+        {
+            "Title": "Trà long nhãn hạt sen",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/1649378747_tra-sen-nhan_400x400.jpg",
+            "Price": "39.000",
+            "ID": "5"
+        },
+        {
+            "Title": "Trà long nhãn hạt sen",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/1649378747_tra-sen-nhan_400x400.jpg",
+            "Price": "39.000",
+            "ID": "6"
+        },
+        {
+            "Title": "Trà HiTea vải",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/1669736893_hi-tea-vai_400x400.png",
+            "Price": "49.000",
+            "ID": "7"
+        },
+        {
+            "Title": "Hi-Tea Đá Tuyết Yuzu Vải",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/1653291175_da-tuyet-vai_400x400.jpg",
+            "Price": "49.000",
+            "ID": "8"
+        },
+        {
+            "Title": "Trà HiTea đào Kombucha",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/1686716517_kombucha-dao_400x400.jpg",
+            "Price": "49.000",
+            "ID": "9"
+        },
+        {
+            "Title": "Trà HiTea Kombucha",
+            "Image": "https://minio.thecoffeehouse.com/image/admin/1686716508_kombucha-yuzu_400x400.jpg",
+            "Price": "49.000",
+            "ID": "10"
+        }
+    ]
+}
