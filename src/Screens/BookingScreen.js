@@ -3,25 +3,31 @@ import { FlatList, Image, View, Text, TextInput, TouchableOpacity, ScrollView, S
 import { SafeAreaView } from "react-native-safe-area-context";
 import {useEffect, useState} from 'react'
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useNavigation } from "@react-navigation/native";
 
 
 
-const BookingScreen = () => {
+const BookingScreen = ({navigation}) => {
+    
+    const data = require('../Data/HiTea.json')
 
-    const renderHiTea = ({item}) => {
+    const renderHiTea = ({item, index}) => {
         return (
-            <TouchableOpacity style={styles.listHiTea}>
-                <View style={styles.HiTeaImg}>
+            <TouchableOpacity 
+                key={index}
+                onPress={() => {navigation.navigate("ProductDetail", {item}); }}
+                style={styles.list}>
+                <View >
                     <Image 
-                        style={{width: 120, height: 160}}
+                        style={styles.ImgProduct}
                         source={{uri: item.Image}}/>
                 </View>
-                <View style={styles.Title}>
-                    <Text>{ item.Title}</Text>
-                    <Text>{ item.Price}</Text>
+                <View style={styles.about}>
+                    <Text style={styles.Title}>{ item.Title}</Text>
+                    <Text style={styles.Price}>{ item.Price}</Text>
                 </View>
-                <View style={styles.Icon}>
-
+                <View >
+                    <Ionicons name="add-circle-outline" size={35} style={styles.Icon}/>
                 </View>
 
             </TouchableOpacity>
@@ -104,6 +110,15 @@ const BookingScreen = () => {
                         </View>
                     </View>
                 </View>
+                <View style={styles.HiTea}>
+                    <Text style={styles.text}>Trà Trái Cây - HiTea</Text>
+                    <View style={styles.product}>
+                    <FlatList 
+                        data={data.HiTea}
+                        renderItem={renderHiTea}
+                    />
+                    </View>
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
@@ -159,7 +174,44 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: '500',
         fontSize: 14,
-    }
+    },
+    text: {
+        margin: 10,
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    list: {
+        display: 'flex',
+        flexDirection: 'row',
+        marginBottom: 10,
+        marginTop: 10,
+    },
+    ImgProduct: {
+        flex: 4,
+        borderRadius: 15,
+        height: 120,
+        width: 130,
+    },
+    about: {
+        flex: 4,
+        marginTop: 10,
+        marginLeft: 20,
+        
+    },
+    Title: {
+        fontSize: 16,
+        fontWeight: '600',
+    },
+    Price: {
+        fontSize: 16,
+        fontWeight: '400',
+    },
+    Icon: {
+        flex: 1,
+        marginRight: 20,
+        marginTop: 40,
+        color: '#fa8c16',
+    },
 })
 
 export default BookingScreen;
