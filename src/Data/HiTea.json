@@ -60,5 +60,153 @@
             "Price": "49.000",
             "ID": "10"
         }
+    ],
+    "TraSua_CloudTea": [
+        {
+            "Title": "CloudTea Trà Xanh Tây Bắc",
+            "Image": "https://product.hstatic.net/1000075078/product/1699500778_screenshot-1699499393_1a369aee1eba4b7bb5fbd5929f14c157_large.png",
+            "Price": "69.000",
+            "ID": "1"
+        },
+        {
+            "Title": "CloudTea Oolong Berry",
+            "Image": "https://product.hstatic.net/1000075078/product/1699503276_screenshot-1699499423_856089027ebc4c9aac35c8d7cf72426a_large.png",
+            "Price": "69.000",
+            "ID": "2"
+        },
+        {
+            "Title": "Trà Sữa Oolong Nướng (Nóng)",
+            "Image": "https://product.hstatic.net/1000075078/product/oolong-nuong-nong_948581_6bd78255e3f344459f0b5cda03aa75d3_large.jpg",
+            "Price": "55.000",
+            "ID": "3"
+        },
+        {
+            "Title": "Trà Sữa Oolong Nướng (Nóng)",
+            "Image": "https://product.hstatic.net/1000075078/product/oolong-nuong-nong_948581_6bd78255e3f344459f0b5cda03aa75d3_large.jpg",
+            "Price": "55.000",
+            "ID": "4"
+        },
+        {
+            "Title": "Hồng Trà Sữa Nóng",
+            "Image": "https://product.hstatic.net/1000075078/product/hong-tra-sua-nong_941687_9df07ba13d084c5c8d2dd780c14af4d4_large.jpg",
+            "Price": "55.000",
+            "ID": "5"
+        },
+        {
+            "Title": "Trà Đen Macchiato",
+            "Image": "https://product.hstatic.net/1000075078/product/tra-den-matchiato_430281_5d57903f55e745d4b547adbfe75b4e8d_large.jpg",
+            "Price": "55.000",
+            "ID": "6"
+        },
+        {
+            "Title": "Hồng Trà Sữa Trân Châu",
+            "Image": "https://product.hstatic.net/1000075078/product/hong-tra-sua-tran-chau_326977_5553515f9fcf44009f3313020e83fbc8_large.jpg",
+            "Price": "55.000",
+            "ID": "7"
+        },
+        {
+            "Title": "Trà Sữa Mắc Ca Trân Châu",
+            "Image": "https://product.hstatic.net/1000075078/product/tra-sua-mac-ca_377522_0d1bb30f7b184aa0885ce073fb8aab18_large.jpg",
+            "Price": "55.000",
+            "ID": "8"
+        },
+        {
+            "Title": "Trà Đen Macchiato",
+            "Image": "https://product.hstatic.net/1000075078/product/tra-den-matchiato_430281_5d57903f55e745d4b547adbfe75b4e8d_large.jpg",
+            "Price": "55.000",
+            "ID": "9"
+        },
+        {
+            "Title": "CloudTea Oolong Nướng Kem Dừa Đá Xay",
+            "Image": "https://product.hstatic.net/1000075078/product/1675329651_bg-cloudtea-daxay_c366d4902f294f9c92d013e80de9576a.jpg",
+            "Price": "59.000",
+            "ID": "10"
+        },
+        {
+            "Title": "CloudTea Oolong Nướng Kem Cheese",
+            "Image": "https://product.hstatic.net/1000075078/product/1675355728_cheese_b17bc1bd8bd14e6a8a0f250d51695f89_large.jpg",
+            "Price": "59.000",
+            "ID": "11"
+        }
+    ],
+    "Coffee": [
+        {
+            "Title": "Phin Sữa Tươi Bánh Flan",
+            "Image": "https://product.hstatic.net/1000075078/product/1696220170_phin-sua-tuoi-banh-flan_0172beb85d08408b8912bf5f1dae7fd9_large.jpg",
+            "Price": "49.000",
+            "ID": "1"
+        },
+        {
+            "Title": "Trà Xanh Espressco Marble",
+            "Image": "https://product.hstatic.net/1000075078/product/1696220139_tra-xanh-espresso-marble_26a0eb92bfd649508d0e93173e9b3083_large.jpg",
+            "Price": "49.000",
+            "ID": "2"
+        },
+        {
+            "Title": "Cà Phê Đen Nóng",
+            "Image": "https://product.hstatic.net/1000075078/product/1639377816_ca-phe-den-nong_2e0cb9233846467fbdcb76e99d2b7cac_large.jpg",
+            "Price": "39.000",
+            "ID": "3"
+        },
+        {
+            "Title": "Cà Phê Sữa Nóng",
+            "Image": "https://product.hstatic.net/1000075078/product/1639377770_cfsua-nong_9a47f58888e7444a9979e0d117d49ad3_large.jpg",
+            "Price": "39.000",
+            "ID": "4"
+        },
+        {
+            "Title": "Espresso Nóng",
+            "Image": "https://product.hstatic.net/1000075078/product/espressonong_612688_41d0812d5efb47aaaebaea91a3b206db_large.jpg",
+            "Price": "49.000",
+            "ID": "5"
+        },
+        {
+            "Title": "Latte Nóng",
+            "Image": "https://product.hstatic.net/1000075078/product/latte_851143_377d5e11c1e145a8bf5f82a64047e60d_large.jpg",
+            "Price": "59.000",
+            "ID": "6"
+        },
+        {
+            "Title": "Caramel Macchiato Nóng",
+            "Image": "https://product.hstatic.net/1000075078/product/caramelmacchiatonong_168039_9a4c155f15294771b9c300b0230c6a88_large.jpg",
+            "Price": "59.000",
+            "ID": "7"
+        },
+        {
+            "Title": "Americano Nóng",
+            "Image": "https://product.hstatic.net/1000075078/product/1636647328_arme-nong_3c118e3822444aadb7f0e1a162d5264a_large.jpg",
+            "Price": "49.000",
+            "ID": "8"
+        },
+        {
+            "Title": "Capuchino Nóng",
+            "Image": "https://product.hstatic.net/1000075078/product/cappuccino_621532_f42ec557eda145b5958374ca67e65ff2_large.jpg",
+            "Price": "59.000",
+            "ID": "9"
+        },
+        {
+            "Title": "The Coffee House Sữa Đá",
+            "Image": "https://product.hstatic.net/1000075078/product/1675355354_bg-tch-sua-da-no_4fbf208885ed464ab4b5e145336d42a2_large.jpg",
+            "Price": "45.000",
+            "ID": "10"
+        },
+        {
+            "Title": "Cà Phê Đen Đá",
+            "Image": "https://product.hstatic.net/1000075078/product/1639377797_ca-phe-den-da_6f4766ec0f8b4e929a8d916ae3c13254_large.jpg",
+            "Price": "39.000",
+            "ID": "11"
+        },
+        {
+            "Title": "Cà Phê Sữa Đá",
+            "Image": "https://product.hstatic.net/1000075078/product/1669736835_ca-phe-sua-da_e6168b6a38ec45d2b4854d2708b5d542_large.png",
+            "Price": "39.000",
+            "ID": "12"
+        },
+        {
+            "Title": "Bạc Sỉu",
+            "Image": "https://product.hstatic.net/1000075078/product/1639377904_bac-siu_525b9fa5055b41f183088c8e479a9472_large.jpg",
+            "Price": "39.000",
+            "ID": "13"
+        }
     ]
 }
