@@ -8,6 +8,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 // import Screen
 import HomeScreen from "../Screens/HomeScreen";
 import BookingScreen from "../Screens/BookingScreen";
+import ProductDetail from '../Screens/ProductDetail'
 import StoreLocationScreen from "../Screens/StoreLocationScreen";
 import StoreLocationDetail from "../Screens/StoreLocationDetail";
 import VoucherScreen from "../Screens/VoucherScreen";

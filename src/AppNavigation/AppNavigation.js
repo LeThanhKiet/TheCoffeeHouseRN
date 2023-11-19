@@ -47,6 +47,7 @@ const AppNavigation = () => {
                         <Header />;
                     }}
                 />
+                <BookingStack.Screen name="ProductDetail" component={ProductDetail} />
             </BookingStack.Navigator>
         );
     };

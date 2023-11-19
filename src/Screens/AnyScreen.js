@@ -3,7 +3,6 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Dimensions, StyleSheet } from 'react-native'
 
-
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 const WIDTH = Dimensions.get('window').width;

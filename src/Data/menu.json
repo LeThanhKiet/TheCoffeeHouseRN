@@ -1,0 +1,36 @@
+{
+    "Search": [
+        {
+            "Title": "Món mới phải thử",
+            "Poster": "https://minio.thecoffeehouse.com/image/admin/1700063192_new-drink-3.png"
+        },
+        {
+            "Title": "Trà trái cây - HiTea",
+            "Poster": "https://minio.thecoffeehouse.com/image/admin/1686899812_ic-tra-trai-cay.png"
+        },
+        {
+            "Title": "Trà sữa - CloudTea",
+            "Poster": "https://minio.thecoffeehouse.com/image/admin/1699004892_cloudtea.png"
+        },
+        {
+            "Title": "Trà xanh - Chocolate",
+            "Poster": "https://minio.thecoffeehouse.com/image/admin/1699004892_cloudtea.png"
+        },
+        {
+            "Title": "Đá xay Frosty",
+            "Poster": "https://minio.thecoffeehouse.com/image/admin/1699264346_frosty.png"
+        },
+        {
+            "Title": "Cà phê - CloudFee",
+            "Poster": "https://minio.thecoffeehouse.com/image/admin/1686899766_ic-caphe.png" 
+        },
+        {
+            "Title": "Bánh ngọt",
+            "Poster": "https://minio.thecoffeehouse.com/image/admin/1699004683_banhngot.png"
+        },
+        {
+            "Title": "Bánh mặn",
+            "Poster": "https://minio.thecoffeehouse.com/image/admin/1699004677_banhman.png"
+        }
+    ]
+}
