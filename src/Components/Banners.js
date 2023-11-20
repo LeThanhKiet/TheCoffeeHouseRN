@@ -7,16 +7,12 @@ export default function Banners() {
     return (
         <View style={styles.container}>
             <Swiper
-                // autoplay = {true}
-                // autoplayTimeout = {3}
                 style={styles.wrapper}
-                height={240}
-                onMomentumScrollEnd={(e, state, context) => console.log("index:", state.index)}
                 dot={
                     <View
                         style={{
-                            backgroundColor: "#EEE",
-                            width: 25,
+                            backgroundColor: "gray",
+                            width: 20,
                             height: 3,
                             borderRadius: 4,
                             margin: 3,
@@ -26,8 +22,8 @@ export default function Banners() {
                 activeDot={
                     <View
                         style={{
-                            backgroundColor: "#000",
-                            width: 28,
+                            backgroundColor: "#FFF",
+                            width: 20,
                             height: 3,
                             borderRadius: 4,
                             margin: 3,
@@ -35,9 +31,9 @@ export default function Banners() {
                     />
                 }
                 paginationStyle={{
-                    bottom: -16,
+                    bottom: -10,
                 }}
-                loop
+                
             >
                 <View style={styles.slide}>
                     <Image resizeMode="stretch" style={styles.image} source={require("../images/banner-1.jpg")} />
@@ -65,15 +61,14 @@ export default function Banners() {
 
 const styles = StyleSheet.create({
     container: {
-        // borderRadius: 8,
-        // shadowColor: "#AAA",
-        // shadowOpacity: 0.4,
-        // elevation: 8,
+        borderRadius: 8,
+        shadowColor: "#AAA",
+        shadowOpacity: 0.4,
     },
     wrapper: {},
     image: {
-        width: "90%",
-        height: 120,
+        width: "92%",
+        height: 220,
         borderRadius: 8,
     },
     slide: {

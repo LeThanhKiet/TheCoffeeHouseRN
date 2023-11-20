@@ -20,7 +20,7 @@ export default function CodeUser() {
                     <View style={styles.code}>
                         <Image
                             source={require("../images/barcode.gif")}
-                            style={{ width: 220, height: 40, alignSelf: "center" }}
+                            style={{ width: 220, height: 50, alignSelf: "center" }}
                         />
                     </View>
                 </ImageBackground>

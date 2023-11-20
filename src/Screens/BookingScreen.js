@@ -44,18 +44,18 @@ const BookingScreen = ({navigation}) => {
 
     return (
         <SafeAreaView>
-            <ScrollView>
-                <View style={styles.header}>
-                    <View style={styles.headerLeft}>
-                        <Text style={styles.headerText}>Danh Mục</Text>
-                        <Ionicons name="chevron-down-outline" size={18} style={{marginTop: 5}}/>
-                    </View>
-                    <View style={styles.headerRight}>
-                        <Ionicons name="search-outline" size={20} style={{marginTop: 5}}/>
-                        <Ionicons name="heart-outline" size={20} style={{marginTop: 5}}/>
-                    </View>
+            <View style={styles.header}>
+                <View style={styles.headerLeft}>
+                    <Text style={styles.headerText}>Danh Mục</Text>
+                    <Ionicons name="chevron-down-outline" size={18} style={{marginTop: 5}}/>
                 </View>
-                <View style={styles.line}></View>
+                <View style={styles.headerRight}>
+                    <Ionicons name="search-outline" size={20} style={{marginTop: 5}}/>
+                    <Ionicons name="heart-outline" size={20} style={{marginTop: 5}}/>
+                </View>
+            </View>
+            <View style={styles.line}></View>
+            <ScrollView>
                 <View>
                     <View style={styles.category}>
                         <View style={styles.categoryItem}>

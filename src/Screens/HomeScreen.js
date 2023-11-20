@@ -6,6 +6,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 // Components
 import CodeUser from "../Components/CodeUser";
 import Banners from "../Components/Banners";
+import BannerList from "../Components/BannerList";
 
 const WIDTH = Dimensions.get("window").width; // Chiều rộng thiết bị
 
@@ -61,6 +62,27 @@ const HomeScreen = ({ navigation }) => {
                 <View>
                     <Banners/>
                 </View>
+                <Text style={styles.titleDiscovery}>Khám phá thêm </Text>
+                    <ScrollView 
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    >
+                        <View style={styles.swipeBtnDiscovery}>
+                            <TouchableOpacity>
+                                <Text style={[styles.btnDiscovery, styles.activeBtnDiscovery]}>Ưu đãi đặc biệt</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Text style={styles.btnDiscovery}>Cập nhật từ nhà</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Text style={styles.btnDiscovery}>#CoffeeLover</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <Text style={styles.btnDiscovery}>Quà tặng từ nhà</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </ScrollView>
+                    <View><BannerList/></View>
             </ScrollView>
         </SafeAreaView>
     );
@@ -113,11 +135,37 @@ const styles = StyleSheet.create({
         marginBottom: 16,
         flexDirection: "row",
         justifyContent: "space-around",
-        padding: 10,
+
     },
     imgOption: {
         height: 70, 
         width: 70,
+    },
+
+    titleDiscovery: {
+        color: '#000',
+        fontWeight: 'bold',
+        fontSize: 20,
+        marginTop: 20,
+        marginLeft: 15,
+    },
+    swipeBtnDiscovery: {
+        flexDirection: 'row', 
+        marginLeft: 15, 
+        marginRight: 10,
+    },
+    btnDiscovery: {
+        paddingRight: 15,
+        color: '#000',
+        textAlign: 'center',
+        fontWeight: '500',
+        fontSize: 17,
+        padding: 5,
+    },
+    activeBtnDiscovery: {
+        color: '#FF7900',
+        backgroundColor: '#EEE',
+        borderRadius: 20,
     },
 });
 

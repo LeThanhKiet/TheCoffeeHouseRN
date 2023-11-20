@@ -8,12 +8,12 @@ export default function ProductDetail ({navigation, route}) {
     return (
         <SafeAreaView>
             <ScrollView>
-                <Text>hiiiiii</Text>
+                <Text>ProductDetail</Text>
             </ScrollView>
         </SafeAreaView>
     )
 };
 
-// export default ProductDetail;
+
 
 
