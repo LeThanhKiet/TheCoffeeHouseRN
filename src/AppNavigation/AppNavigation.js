@@ -10,6 +10,7 @@ import StoreLocationScreen from "../Screens/StoreLocationScreen";
 import VoucherScreen from "../Screens/VoucherScreen";
 
 import StoreLocationDetail from "../Screens/StoreLocationDetail";
+import ProductDetail from "../Screens/ProductDetail";
 
 // import Component
 

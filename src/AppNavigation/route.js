@@ -34,6 +34,20 @@ export default function AppNavigation() {
         );
     };
 
+    const BookStackScreen = () => {
+        const BookStack = createNativeStackNavigator();
+        return (
+            <BookStack.Navigator>
+                <BookStack.Screen
+                    name="BookStackScreen"
+                    component={BookStackScreen}
+                    options={{ headerShown: false }}
+                />
+                <BookStack.Screen name="ProductDetail" component={ProductDetail} />
+            </BookStack.Navigator>
+        );
+    };
+
     return (
         <NavigationContainer>
             <Tab.Navigator

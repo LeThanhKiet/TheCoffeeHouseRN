@@ -16,7 +16,7 @@ export default function CodeUser() {
                         <Text style={{ color: "red" }}>Tích điểm</Text>
                     </View>
                     <Text style={[styles.codeInfo, { fontSize: 16, fontWeight: "bold" }]}>Name</Text>
-                    <Text style={[styles.codeInfo, { marginBottom: 24 }]}>68 BEAN</Text>
+                    <Text style={[styles.codeInfo, { marginBottom: 10 }]}>68 BEAN</Text>
                     <View style={styles.code}>
                         <Image
                             source={require("../images/barcode.gif")}

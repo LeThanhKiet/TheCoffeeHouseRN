@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView, ImageBackground, TouchableOpacity, Dimensions, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 // Components
 import CodeUser from "../Components/CodeUser";
+import Banners from "../Components/Banners";
 
 const WIDTH = Dimensions.get("window").width; // Chiều rộng thiết bị
 
@@ -12,6 +14,11 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
+            <View style={styles.Header}>
+                <Text style={styles.headerText}>Xin chào! Cà Phê đi!</Text>
+                <Ionicons name="notifications-outline" size={25} style={styles.headerIcon}/>
+                
+            </View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <ImageBackground
                     source={require("../images/backgroundContent.png")}
@@ -24,13 +31,36 @@ const HomeScreen = ({ navigation }) => {
                             <View style={styles.scroll}></View>
                             <View style={styles.option}>
                                 <TouchableOpacity>
-                                    <Image source={require("../images/shipping_icon.jpg")} />
-                                    <Text>Giao hàng</Text>
+                                    <Image 
+                                        style={styles.imgOption}
+                                        source={require("../images/shipping_iconn.png")} />
+                                    <Text style={{fontWeight: '600'}}>Giao hàng</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Image 
+                                        style={styles.imgOption}
+                                        source={require("../images/bring_icon.png")} />
+                                    <Text style={{fontWeight: '600'}}>Mang đi</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Image 
+                                        style={styles.imgOption}
+                                        source={require("../images/bean.png")} />
+                                    <Text style={{fontWeight: '600'}}>Đổi bean</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Image 
+                                        style={styles.imgOption}
+                                        source={require("../images/gift.png")} />
+                                    <Text style={{fontWeight: '600'}}>Quà tặng</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
                     </View>
                 </ImageBackground>
+                <View>
+                    <Banners/>
+                </View>
             </ScrollView>
         </SafeAreaView>
     );
@@ -39,6 +69,22 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+
+    Header: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 10,
+    },
+    headerText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginLeft: 20,
+    },
+    headerIcon: {
+        marginRight: 30,
+
     },
 
     content: {
@@ -63,10 +109,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "#CCC",
         borderRadius: 8,
-        marginHorizontal: 16,
+        marginHorizontal: 10,
         marginBottom: 16,
         flexDirection: "row",
         justifyContent: "space-around",
+        padding: 10,
+    },
+    imgOption: {
+        height: 70, 
+        width: 70,
     },
 });
 

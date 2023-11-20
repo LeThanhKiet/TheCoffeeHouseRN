@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 import { Dimensions, Image, View, Text, TextInput, TouchableOpacity, SafeAreaView, ScrollView, StyleSheet } from 'react-native'
-import {useEffect, useState} from 'react'
+import {useState} from "react";
 
 
-const BookingDetail = () => {
-
+export default function ProductDetail ({navigation, route}) {
+    
     return (
         <SafeAreaView>
             <ScrollView>
-
+                <Text>hiiiiii</Text>
             </ScrollView>
         </SafeAreaView>
     )
 };
 
-export default BookingDetail;
+// export default ProductDetail;
 
 

@@ -1,0 +1,53 @@
+{
+    "Title": "Trà đào cam sả - Nóng",
+    "Price": "59.000",
+    "ID": "1",
+    "Describe": "Vị thanh ngọt của đào, vị chua dịu của cam vàng nguyên vỏ, vị chát của trà đen được ủ tới 4 tiếng, cùng hương thơm nồng đăch trưng của sả chính là điểm sáng làm nên sức hấp dẫn của thức uống này",
+    "Image": [
+        {        
+            "Source":"https://minio.thecoffeehouse.com/image/admin/tdcs-nong_288997_400x400.jpg"
+        } , 
+        {        
+            "Source":"https://minio.thecoffeehouse.com/image/admin/1645970867_75081238-2485567778383900-6688212052168671232-n.jpg"
+        } , 
+        {        
+            "Source":"https://minio.thecoffeehouse.com/image/admin/1645970868_123135733-2818270501780291-1027626989587865971-n.jpg"
+        }        
+    ],
+    "Size": [
+        {
+            "Type": "Lớn",
+            "Cost": "65.000"
+        },
+        {
+            "Type": "Vừa",
+            "Cost": "59.000"
+        },
+        {
+            "Type": "Nhỏ",
+            "Cost": "49.000"
+        }
+    ],
+    "Topping": [
+        {
+            "More": "Kem phô mai",
+            "Value": "10.000"
+        },
+        {
+            "More": "Đào miếng",
+            "Value": "10.000"
+        },
+        {
+            "More": "Trân châu trắng",
+            "Value": "10.000"
+        },
+        {
+            "More": "Thạch Olong nướng",
+            "Value": "10.000"
+        },
+        {
+            "More": "Trái Vải",
+            "Value": "10.000"
+        }
+    ]
+}

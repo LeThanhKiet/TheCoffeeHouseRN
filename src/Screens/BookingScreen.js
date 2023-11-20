@@ -1,29 +1,37 @@
 import React from "react";
 import { FlatList, Image, View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context";
-import {useEffect, useState} from 'react'
+
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
+import {useState} from "react";
 
 
 
 const BookingScreen = ({navigation}) => {
     
     const data = require('../Data/HiTea.json')
+    // const [title, settitle] = useState('')
+    // const [image, setimage] = useState('')
+    // const [price, setprice] = useState('')
+
 
     const renderHiTea = ({item, index}) => {
         return (
             <TouchableOpacity 
                 key={index}
-                onPress={() => {navigation.navigate("ProductDetail", {item}); }}
+                onPress={() => {navigation.navigate("ProductDetail"); }}
                 style={styles.list}>
                 <View >
                     <Image 
                         style={styles.ImgProduct}
+                       
                         source={{uri: item.Image}}/>
                 </View>
                 <View style={styles.about}>
-                    <Text style={styles.Title}>{ item.Title}</Text>
+                    <Text style={styles.Title}
+                        >{ item.Title}
+                    </Text>
                     <Text style={styles.Price}>{ item.Price}</Text>
                 </View>
                 <View >
@@ -110,11 +118,32 @@ const BookingScreen = ({navigation}) => {
                         </View>
                     </View>
                 </View>
+
+                <View style={styles.HiTea}>
+                    <Text style={styles.text}>Cà Phê - CloudFee</Text>
+                    <View style={styles.product}>
+                    <FlatList 
+                        data={data.Coffee}
+                        renderItem={renderHiTea}
+                    />
+                    </View>
+                </View>
+
                 <View style={styles.HiTea}>
                     <Text style={styles.text}>Trà Trái Cây - HiTea</Text>
                     <View style={styles.product}>
                     <FlatList 
                         data={data.HiTea}
+                        renderItem={renderHiTea}
+                    />
+                    </View>
+                </View>
+
+                <View style={styles.HiTea}>
+                    <Text style={styles.text}>Trà Sữa - CloudTea</Text>
+                    <View style={styles.product}>
+                    <FlatList 
+                        data={data.TraSua_CloudTea}
                         renderItem={renderHiTea}
                     />
                     </View>
