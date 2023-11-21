@@ -8,6 +8,7 @@ export default function Banners() {
         <View style={styles.container}>
             <Swiper
                 style={styles.wrapper}
+                height={240}
                 dot={
                     <View
                         style={{
@@ -31,7 +32,7 @@ export default function Banners() {
                     />
                 }
                 paginationStyle={{
-                    bottom: -10,
+                    bottom: 15,
                 }}
                 
             >
@@ -61,11 +62,10 @@ export default function Banners() {
 
 const styles = StyleSheet.create({
     container: {
-        borderRadius: 8,
-        shadowColor: "#AAA",
-        shadowOpacity: 0.4,
+        // borderRadius: 8,
+        // shadowColor: "#AAA",
+        // shadowOpacity: 0.4,
     },
-    wrapper: {},
     image: {
         width: "92%",
         height: 220,

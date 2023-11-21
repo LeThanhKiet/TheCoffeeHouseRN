@@ -116,6 +116,21 @@ const AnyScreen = () => {
 };
 
 const styles = StyleSheet.create({
+    Header: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 10,
+    },
+    headerText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginLeft: 20,
+    },
+    headerIcon: {
+        marginRight: 30,
+
+    },
     container: {
         paddingHorizontal: 16,
         paddingBottom: 16,
