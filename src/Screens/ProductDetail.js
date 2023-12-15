@@ -34,7 +34,7 @@ export default function ProductDetail({ navigation, route }) {
     const handleTotal = () => {};
 
     const optionSize = ["Lớn", "Vừa", "Nhỏ"];
-    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [selectedIndex, setSelectedIndex] = useState(1);
 
     const optionTopping = [
         "Kem Phô Mai Macchiatop",
@@ -98,7 +98,7 @@ export default function ProductDetail({ navigation, route }) {
                                         checkedIcon="dot-circle-o"
                                         uncheckedIcon="circle-o"
                                         checked={selectedIndex === 0}
-                                        onPress={() => setSelectedIndex(1)}
+                                        onPress={() => setSelectedIndex(0)}
                                         checkedColor="#E67904"
                                         containerStyle={{ marginLeft: -10 }}
                                     />
