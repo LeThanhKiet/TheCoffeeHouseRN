@@ -30,6 +30,9 @@ export default function ProductDetail({ navigation, route }) {
 
     // Tổng tiền
     const [total, setTotal] = useState(data.Price);
+    const handleTotal = () => {};
+
+    const optionSize = ["Lớn", "Vừa", "Nhỏ"];
 
     const optionTopping = [
         "Kem Phô Mai Macchiatop",
@@ -47,25 +50,47 @@ export default function ProductDetail({ navigation, route }) {
                     <Image source={{ uri: data?.Image }} style={styles.imageSingle} />
                 </View>
 
-                <View styles={styles.productInfo}>
-                    <View>
-                        <Text style={styles.productName} numberOfLines={2} ellipsizeMode="tail">
-                            {data?.Title}
-                        </Text>
-                        <Text style={styles.price}>{data?.Price} đ</Text>
-                    </View>
+                <View style={{ backgroundColor: "#fff", padding: 16 }}>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                        <View>
+                            <Text style={styles.productName} numberOfLines={2} ellipsizeMode="tail">
+                                {data?.Title}
+                            </Text>
+                            <Text style={styles.price}>{data?.Price} đ</Text>
+                        </View>
 
-                    <View>
-                        <TouchableOpacity>
-                            <Ionicons name="heart-outline" size={24} color="#000" style={styles.icon} />
-                        </TouchableOpacity>
+                        <View>
+                            <TouchableOpacity>
+                                <Ionicons name="heart-outline" size={24} color="#000" style={styles.icon} />
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
 
-                <TouchableOpacity style={{ marginTop: 12, padding: 16, backgroundColor: "#FFF" }}>
+                <View style={{ marginTop: 12, padding: 16, backgroundColor: "#FFF" }}>
                     <Text style={{ color: "#000", fontSize: 20, fontWeight: "bold" }}>Size</Text>
                     <Text style={{ color: "#767676" }}>Chọn 1 loại size</Text>
-                </TouchableOpacity>
+                    <View>
+                        {optionSize.map((option) => {
+                            let productPrice = parseInt(data.Price);
+                            console.log(typeof data.Price);
+                            console.log(typeof productPrice);
+                            if (option === "Lớn") {
+                                productPrice = productPrice + 20;
+                            } else if (option === "Vừa") {
+                                productPrice = productPrice + 10;
+                            } else if (option === "Nhỏ") {
+                                productPrice = productPrice;
+                            }
+                            return (
+                                <View style={styles.optionTopping}>
+                                    <Text style={styles.toppingTitle}>{option}</Text>
+                                    <Text style={{ fontSize: 15, fontWeight: "bold" }}>{productPrice}.000đ</Text>
+                                </View>
+                            );
+                        })}
+                    </View>
+                </View>
                 <View style={{ marginTop: 12, padding: 16, backgroundColor: "#FFF" }}>
                     <Text style={{ color: "#000", fontSize: 20, fontWeight: "bold" }}>Topping</Text>
                     <Text style={{ color: "#767676" }}>Chọn tối đa 2 loại</Text>
@@ -82,7 +107,7 @@ export default function ProductDetail({ navigation, route }) {
                 </View>
                 <View style={{ marginTop: 12, padding: 16, backgroundColor: "#FFF" }}>
                     <Text style={{ color: "#000", fontSize: 20, fontWeight: "bold" }}>Yêu cầu khác</Text>
-                    <Text style={{ color: "#767676" }}>Những tùy chọn khác</Text>
+                    <Text style={{ color: "#767676", paddingVertical: 5 }}>Những tùy chọn khác</Text>
                     <TextInput style={styles.input} placeholder="Thêm ghi chú" />
                 </View>
                 <View
@@ -129,9 +154,7 @@ const styles = StyleSheet.create({
         resizeMode: "contain",
     },
 
-    productInfo: {
-        flexDirection: "row",
-    },
+    icon: { top: 10, right: 10 },
 
     productName: {
         maxWidth: "90%",
@@ -146,8 +169,6 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
     },
 
-    icon: {},
-
     optionTopping: {
         paddingVertical: 10,
         flexDirection: "row",
@@ -158,6 +179,14 @@ const styles = StyleSheet.create({
     toppingTitle: {
         fontSize: 16,
         fontWeight: "bold",
+    },
+
+    input: {
+        marginTop: 10,
+        padding: 8,
+        height: 40,
+        borderWidth: 0.3,
+        borderRadius: 8,
     },
 
     quantity_btn: {
