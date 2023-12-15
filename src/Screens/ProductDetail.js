@@ -11,7 +11,7 @@ import {
     StyleSheet,
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { CheckBox } from "@rneui/base";
+import { CheckBox, Icon } from "@rneui/base";
 
 import { useState } from "react";
 
@@ -103,10 +103,20 @@ export default function ProductDetail({ navigation, route }) {
                             return (
                                 <View style={styles.optionTopping}>
                                     <View style={{ flexDirection: "row", textAlignVertical: "center" }}>
-                                        <CheckBox checked={checked} onPress={toggleCheckbox} checkedColor="#E67904" />
-                                        <Text style={styles.toppingTitle}>{option}</Text>
+                                        <CheckBox
+                                            title={option}
+                                            textStyle={{ fontWeight: "bold", fontSize: 15 }}
+                                            size={20}
+                                            checked={checked}
+                                            onPress={toggleCheckbox}
+                                            checkedColor="#E67904"
+                                            containerStyle={{ marginLeft: -10 }}
+                                        />
+                                        {/* <Text style={styles.toppingTitle}>{option}</Text> */}
                                     </View>
-                                    <Text style={{ fontSize: 15, fontWeight: "bold" }}>10.000đ</Text>
+                                    <Text style={{ fontSize: 15, fontWeight: "bold", textAlignVertical: "center" }}>
+                                        10.000đ
+                                    </Text>
                                 </View>
                             );
                         })}
@@ -180,7 +190,6 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         flexDirection: "row",
         justifyContent: "space-between",
-        //borderBottomWidth: 0.25,
     },
 
     toppingTitle: {
