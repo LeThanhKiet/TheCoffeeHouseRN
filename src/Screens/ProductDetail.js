@@ -11,6 +11,7 @@ import {
     StyleSheet,
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { CheckBox } from "@rneui/base";
 
 import { useState } from "react";
 
@@ -42,6 +43,9 @@ export default function ProductDetail({ navigation, route }) {
         "Đào Miếng",
         "Trân Châu Trắng",
     ];
+
+    const [checked, setChecked] = useState(false);
+    const toggleCheckbox = () => setChecked(!checked);
 
     return (
         <SafeAreaView style={styles.container}>
@@ -98,7 +102,10 @@ export default function ProductDetail({ navigation, route }) {
                         {optionTopping.map((option) => {
                             return (
                                 <View style={styles.optionTopping}>
-                                    <Text style={styles.toppingTitle}>{option}</Text>
+                                    <View style={{ flexDirection: "row", textAlignVertical: "center" }}>
+                                        <CheckBox checked={checked} onPress={toggleCheckbox} checkedColor="#E67904" />
+                                        <Text style={styles.toppingTitle}>{option}</Text>
+                                    </View>
                                     <Text style={{ fontSize: 15, fontWeight: "bold" }}>10.000đ</Text>
                                 </View>
                             );
