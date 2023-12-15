@@ -34,6 +34,7 @@ export default function ProductDetail({ navigation, route }) {
     const handleTotal = () => {};
 
     const optionSize = ["Lớn", "Vừa", "Nhỏ"];
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
     const optionTopping = [
         "Kem Phô Mai Macchiatop",
@@ -79,6 +80,8 @@ export default function ProductDetail({ navigation, route }) {
                             let productPrice = parseInt(data.Price);
                             console.log(typeof data.Price);
                             console.log(typeof productPrice);
+
+                            let index;
                             if (option === "Lớn") {
                                 productPrice = productPrice + 20;
                             } else if (option === "Vừa") {
@@ -88,8 +91,21 @@ export default function ProductDetail({ navigation, route }) {
                             }
                             return (
                                 <View style={styles.optionTopping}>
-                                    <Text style={styles.toppingTitle}>{option}</Text>
-                                    <Text style={{ fontSize: 15, fontWeight: "bold" }}>{productPrice}.000đ</Text>
+                                    <CheckBox
+                                        title={option}
+                                        textStyle={{ fontWeight: "bold", fontSize: 15 }}
+                                        size={20}
+                                        checkedIcon="dot-circle-o"
+                                        uncheckedIcon="circle-o"
+                                        checked={selectedIndex === 0}
+                                        onPress={() => setSelectedIndex(1)}
+                                        checkedColor="#E67904"
+                                        containerStyle={{ marginLeft: -10 }}
+                                    />
+                                    {/* <Text style={styles.toppingTitle}>{option}</Text> */}
+                                    <Text style={{ fontSize: 15, fontWeight: "bold", textAlignVertical: "center" }}>
+                                        {productPrice}.000đ
+                                    </Text>
                                 </View>
                             );
                         })}
