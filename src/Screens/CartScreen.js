@@ -96,25 +96,24 @@ export default function CartScreen({ navigation }) {
                     </View>
                 </View>
 
-                <View style={styles.content}>
+                <View style={styles.contentTT}>
                     <Text style={styles.titleContent}>Thanh toán</Text>
                     <TouchableOpacity>
                         <Ionicons name="chevron-forward-outline" size={20} color="#000" style={styles.rightArrow} />
                         <Text style={styles.select}>Chọn phương thức thanh toán</Text>
                     </TouchableOpacity>
                 </View>
-
-                <View style={styles.infoBooking}>
-                    <View>
-                        <Text style={styles.txtBooking}>Tự đến lấy • 3 sản phẩm</Text>
-                        <Text style={styles.totalPrice}>125.000đ</Text>
-                    </View>
-
-                    <TouchableOpacity>
-                        <Text style={styles.btnBooking}>đặt hàng</Text>
-                    </TouchableOpacity>
-                </View>
             </ScrollView>
+            <View style={styles.infoBooking}>
+                <View>
+                    <Text style={styles.txtBooking}>Tự đến lấy • 3 sản phẩm</Text>
+                    <Text style={styles.totalPrice}>125.000đ</Text>
+                </View>
+
+                <TouchableOpacity>
+                    <Text style={styles.btnBooking}>đặt hàng</Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     );
 }
@@ -138,6 +137,13 @@ const styles = StyleSheet.create({
 
     content: {
         marginTop: 16,
+        padding: 16,
+        backgroundColor: "#FFF",
+    },
+
+    contentTT: {
+        marginTop: 16,
+        marginBottom: 150,
         padding: 16,
         backgroundColor: "#FFF",
     },
@@ -194,6 +200,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         backgroundColor: "#FF7900",
+        position: 'absolute',
+        marginTop: 650,
+        width: '100%',
+        borderRadius: 5,
     },
     txtBooking: {
         color: "#FFF",
