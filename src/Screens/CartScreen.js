@@ -3,7 +3,20 @@ import { View, Text, Dimensions, StyleSheet, ScrollView, TouchableOpacity } from
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+// redux
+import { useSelector, useDispatch } from "react-redux";
+
+// remove form cart
+import { removeFromCart } from "../Redux/action";
+
 export default function CartScreen({ navigation }) {
+    const cartItems = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+
+    const handleRemoveProduct = (itemId) => {
+        dispatch(removeFromCart(itemId));
+    };
+
     return (
         <SafeAreaView>
             <View style={styles.header}>
@@ -59,14 +72,23 @@ export default function CartScreen({ navigation }) {
                         <TouchableOpacity
                             style={{ marginTop: 16, flexDirection: "row", justifyContent: "space-between" }}
                         >
-                            <View style={{ flexDirection: "row" }}>
+                            {/* <View style={{ flexDirection: "row" }}>
                                 <Ionicons name="pencil-outline" size={24} color="#FF7900" />
                                 <View style={{ marginLeft: 16 }}>
                                     <Text style={styles.price}>x3 Bạc Sỉu</Text>
                                     <Text style={styles.price}>Lớn</Text>
                                 </View>
                             </View>
-                            <Text style={styles.price}>35.000đ</Text>
+                            <Text style={styles.price}>35.000đ</Text> */}
+                            {cartItems.map((item) => (
+                                <View key={item.id} style={{ flexDirection: "row" }}>
+                                    <Ionicons name="pencil-outline" size={24} color="#FF7900" />
+                                    <View style={{ marginLeft: 16 }}>
+                                        <Text style={styles.price}>x3 Bạc Sỉu</Text>
+                                        <Text style={styles.price}>Lớn</Text>
+                                    </View>
+                                </View>
+                            ))}
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -200,16 +222,18 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         backgroundColor: "#FF7900",
-        position: 'absolute',
+        position: "absolute",
         marginTop: 650,
-        width: '100%',
+        width: "100%",
         borderRadius: 5,
     },
     txtBooking: {
         color: "#FFF",
+        fontSize: 16,
     },
     totalPrice: {
         color: "#FFF",
+        fontSize: 18,
         fontWeight: "bold",
     },
     btnBooking: {

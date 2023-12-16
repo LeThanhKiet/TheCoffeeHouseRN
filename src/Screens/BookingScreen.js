@@ -6,11 +6,22 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 
+// redux
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/action";
+
 const BookingScreen = ({ navigation }) => {
     const data = require("../Data/HiTea.json");
     // const [title, settitle] = useState('')
     // const [image, setimage] = useState('')
     // const [price, setprice] = useState('')
+
+    const dispatch = useDispatch();
+    const handleAddToCart = ({ item }) => {
+        const newItem = { id: item?.ID, title: item?.Title, price: item?.Price };
+        console.log(newItem);
+        //dispatch(addToCart(newItem));
+    };
 
     const renderHiTea = ({ item, index }) => {
         const onNavigate = () => {
@@ -26,9 +37,9 @@ const BookingScreen = ({ navigation }) => {
                     <Text style={styles.Title}>{item.Title}</Text>
                     <Text style={styles.Price}>{item.Price}</Text>
                 </View>
-                <View>
+                <TouchableOpacity onPress={handleAddToCart({ item })}>
                     <Ionicons name="add-circle-outline" size={35} style={styles.Icon} />
-                </View>
+                </TouchableOpacity>
             </TouchableOpacity>
         );
     };
