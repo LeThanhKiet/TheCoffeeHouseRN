@@ -17,6 +17,7 @@ const BookingScreen = ({ navigation }) => {
             navigation.navigate("ProductDetail", { data: item });
         };
 
+
         return (
             <TouchableOpacity key={index} onPress={onNavigate} style={styles.list}>
                 <View>
@@ -32,6 +33,7 @@ const BookingScreen = ({ navigation }) => {
             </TouchableOpacity>
         );
     };
+
 
     return (
         <SafeAreaView>

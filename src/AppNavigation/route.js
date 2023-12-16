@@ -39,7 +39,7 @@ export default function AppNavigation() {
         return (
             <BookStack.Navigator>
                 <BookStack.Screen name="BookingScreen" component={BookingScreen} options={{ headerShown: false }} />
-                <BookStack.Screen name="ProductDetail" component={ProductDetail} />
+                <BookStack.Screen name="ProductDetail" component={ProductDetail} options={{ headerShown: false }}/>
             </BookStack.Navigator>
         );
     };
