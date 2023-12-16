@@ -29,7 +29,11 @@ export default function AppNavigation() {
                     component={StoreLocationScreen}
                     options={{ headerShown: false }}
                 />
-                <StoreStack.Screen name="StoreLocationDetail" component={StoreLocationDetail} />
+                <StoreStack.Screen
+                    name="StoreLocationDetail"
+                    component={StoreLocationDetail}
+                    options={{ headerShown: false }}
+                />
             </StoreStack.Navigator>
         );
     };
@@ -39,7 +43,7 @@ export default function AppNavigation() {
         return (
             <BookStack.Navigator>
                 <BookStack.Screen name="BookingScreen" component={BookingScreen} options={{ headerShown: false }} />
-                <BookStack.Screen name="ProductDetail" component={ProductDetail} options={{ headerShown: false }}/>
+                <BookStack.Screen name="ProductDetail" component={ProductDetail} options={{ headerShown: false }} />
             </BookStack.Navigator>
         );
     };

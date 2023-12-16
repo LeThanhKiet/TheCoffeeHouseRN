@@ -8,6 +8,9 @@ export default function StoreLocationDetail({ route, navigation }) {
 
     return (
         <SafeAreaView style={{ backgroundColor: "#fff" }}>
+            <TouchableOpacity style={styles.closeContainer} onPress={() => navigation.goBack()}>
+                <Ionicons name="close" size={24} color="#000" style={styles.closeIcon} />
+            </TouchableOpacity>
             <ScrollView>
                 <View style={styles.thumbnail}>
                     <Image source={{ uri: data?.images[0] }} style={styles.image} />
@@ -54,6 +57,17 @@ const WIDTH = Dimensions.get("window").width;
 const HEIGHT = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
+    closeContainer: { position: "absolute", top: 20, left: WIDTH - 60, padding: 10, zIndex: 1 },
+
+    closeIcon: {
+        width: 30,
+        height: 30,
+        color: "#FFF",
+        backgroundColor: "#767676",
+        textAlign: "center",
+        textAlignVertical: "center",
+        borderRadius: 24,
+    },
     image: {
         width: WIDTH,
         height: HEIGHT * 0.36,

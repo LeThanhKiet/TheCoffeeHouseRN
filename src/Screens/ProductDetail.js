@@ -1,15 +1,6 @@
 import React, { useEffect } from "react";
-import {
-    Dimensions,
-    Image,
-    View,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-} from "react-native";
+import { Dimensions, Image, View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { CheckBox, Icon } from "@rneui/base";
 
@@ -59,26 +50,23 @@ export default function ProductDetail({ navigation, route }) {
         cb5: false,
         cb6: false,
     });
-    
 
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleCheckboxChange = (option) => {
         setSelectedOption(option === selectedOption ? null : option);
     };
-    
+
     const handleCheckbox = (checkboxName) => {
         setCheckboxStates({ ...checkboxStates, [checkboxName]: !checkboxStates[checkboxName] });
     };
 
-
-
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView >
-                <TouchableOpacity>
-                    <Ionicons name="close" size={24} color="#000" style={styles.icon} />
-                </TouchableOpacity>
+            <TouchableOpacity style={styles.closeContainer} onPress={() => navigation.goBack()}>
+                <Ionicons name="close" size={24} color="#000" style={styles.closeIcon} />
+            </TouchableOpacity>
+            <ScrollView>
                 <View>
                     <Image source={{ uri: data?.Image }} style={styles.imageSingle} />
                 </View>
@@ -120,7 +108,7 @@ export default function ProductDetail({ navigation, route }) {
                             return (
                                 <View style={styles.optionTopping}>
                                     <CheckBox
-                                        key={option} 
+                                        key={option}
                                         title={option}
                                         textStyle={{ fontWeight: "bold", fontSize: 15 }}
                                         size={20}
@@ -149,7 +137,7 @@ export default function ProductDetail({ navigation, route }) {
                                 <View style={styles.optionTopping}>
                                     <View style={{ flexDirection: "row", textAlignVertical: "center" }}>
                                         <CheckBox
-                                            key={index} 
+                                            key={index}
                                             title={option}
                                             textStyle={{ fontWeight: "bold", fontSize: 15 }}
                                             size={20}
@@ -173,19 +161,18 @@ export default function ProductDetail({ navigation, route }) {
                     <Text style={{ color: "#767676", paddingVertical: 5 }}>Những tùy chọn khác</Text>
                     <TextInput style={styles.input} placeholder="Thêm ghi chú" />
                 </View>
-                
             </ScrollView>
             <View
-                    style={{
-                        paddingLeft: 25,
-                        marginTop: 685,
-                        backgroundColor: "#FFF",
-                        flexDirection: "row",
-                        justifyContent: "space-evenly",
-                        position: "absolute"
-                    }}
-                >
-                <View style={{ flexDirection: "row"}}>
+                style={{
+                    paddingLeft: 25,
+                    marginTop: 685,
+                    backgroundColor: "#FFF",
+                    flexDirection: "row",
+                    justifyContent: "space-evenly",
+                    position: "absolute",
+                }}
+            >
+                <View style={{ flexDirection: "row" }}>
                     <TouchableOpacity>
                         <Text style={styles.quantity_btn} onPress={handleReduce}>
                             -
@@ -202,9 +189,6 @@ export default function ProductDetail({ navigation, route }) {
                     <Text style={styles.add_cart}>Chọn • {total}đ</Text>
                 </TouchableOpacity>
             </View>
-            
-            
-            
         </SafeAreaView>
     );
 }
@@ -214,6 +198,18 @@ const HEIGHT = Dimensions.get("window").height;
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#f4f4f4",
+    },
+
+    closeContainer: { position: "absolute", top: 20, left: WIDTH - 60, padding: 10, zIndex: 1 },
+
+    closeIcon: {
+        width: 30,
+        height: 30,
+        color: "#FFF",
+        backgroundColor: "#767676",
+        textAlign: "center",
+        textAlignVertical: "center",
+        borderRadius: 24,
     },
 
     imageSingle: {
