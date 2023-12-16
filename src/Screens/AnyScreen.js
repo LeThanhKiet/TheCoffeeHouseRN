@@ -68,40 +68,38 @@ const AnyScreen = () => {
                     <Text style={styles.title}>Tài khoản</Text>
 
                     <View style={styles.btnGroup}>
-                        <View style={styles.btnItem}>
-                            <View style={{flexDirection: 'row',}}>
-                                <Ionicons name="person-outline" size={18} color="#000" />
-                                <Text style={styles.btnInfo}>Thông tin cá nhân</Text>
+                        <TouchableOpacity>
+                            <View style={styles.btnItem}>
+                                <View style={{flexDirection: 'row',}}>
+                                    <Ionicons name="person-outline" size={18} color="#000" />
+                                    <Text style={styles.btnInfo}>Thông tin cá nhân</Text>
+                                </View>
+                                <Ionicons name="chevron-forward-outline" size={16} color="#000" />
                             </View>
-                            <Ionicons name="chevron-forward-outline" size={16} color="#000" />
-                        </View>
-
+                        </TouchableOpacity>
+                        <View style={styles.line}></View>
+                        <TouchableOpacity>
+                            <View style={styles.btnItem}>
+                                <View style={{flexDirection: 'row',}}>
+                                    <Ionicons name="bookmark-outline" size={18} color="#000" />
+                                    <Text style={styles.btnInfo}>Địa chỉ đã lưu</Text>
+                                </View>
+                                <Ionicons name="chevron-forward-outline" size={16} color="#000" />
+                            </View>
+                        </TouchableOpacity>
+                        <View style={styles.line}></View>
+                        <TouchableOpacity>
+                            <View style={styles.btnItem}>
+                                <View style={{flexDirection: 'row',}}>
+                                    <Ionicons name="settings-outline" size={18} color="#000" />
+                                    <Text style={styles.btnInfo}>Cài đặt</Text>
+                                </View>
+                                <Ionicons name="chevron-forward-outline" size={16} color="#000" />
+                            </View>
+                        </TouchableOpacity>
                         <View style={styles.line}></View>
 
-                        <View style={styles.btnItem}>
-                            <View style={{flexDirection: 'row',}}>
-                                <Ionicons name="bookmark-outline" size={18} color="#000" />
-                                <Text style={styles.btnInfo}>Địa chỉ đã lưu</Text>
-                            </View>
-                            <Ionicons name="chevron-forward-outline" size={16} color="#000" />
-                        </View>
-                        
-                        <View style={styles.line}></View>
-
-                        <View style={styles.btnItem}>
-                            <View style={{flexDirection: 'row',}}>
-                                <Ionicons name="settings-outline" size={18} color="#000" />
-                                <Text style={styles.btnInfo}>Cài đặt</Text>
-                            </View>
-                            <Ionicons name="chevron-forward-outline" size={16} color="#000" />
-                        </View>
-                        
-                        <View style={styles.line}></View>
-
-                        <TouchableOpacity
-                        // onPress={onLogin}
-                        style={styles.btnItem}
-                        >
+                        <TouchableOpacity style={styles.btnItem}>
                             <View style={{flexDirection: 'row',}}>
                                 <Ionicons name="log-out-outline" size={18} color="#000" />
                                 <Text style={styles.btnInfo}>Đăng xuất</Text>
