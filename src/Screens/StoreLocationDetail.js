@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, ScrollView, StyleSheet, Dimensions, Image, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useRoute } from "@react-navigation/native";
+import { useLayoutEffect } from "react";
 
 export default function StoreLocationDetail({ route, navigation }) {
     const { data } = route.params;

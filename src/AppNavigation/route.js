@@ -9,6 +9,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeScreen from "../Screens/HomeScreen";
 import BookingScreen from "../Screens/BookingScreen";
 import ProductDetail from "../Screens/ProductDetail";
+import CartScreen from "../Screens/CartScreen";
 import StoreLocationScreen from "../Screens/StoreLocationScreen";
 import StoreLocationDetail from "../Screens/StoreLocationDetail";
 import VoucherScreen from "../Screens/VoucherScreen";
@@ -44,6 +45,7 @@ export default function AppNavigation() {
             <BookStack.Navigator>
                 <BookStack.Screen name="BookingScreen" component={BookingScreen} options={{ headerShown: false }} />
                 <BookStack.Screen name="ProductDetail" component={ProductDetail} options={{ headerShown: false }} />
+                <BookStack.Screen name="CartScreen" component={CartScreen} options={{ headerShown: false }} />
             </BookStack.Navigator>
         );
     };

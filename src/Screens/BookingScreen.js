@@ -17,7 +17,6 @@ const BookingScreen = ({ navigation }) => {
             navigation.navigate("ProductDetail", { data: item });
         };
 
-
         return (
             <TouchableOpacity key={index} onPress={onNavigate} style={styles.list}>
                 <View>
@@ -34,7 +33,6 @@ const BookingScreen = ({ navigation }) => {
         );
     };
 
-
     return (
         <SafeAreaView>
             <View style={styles.header}>
@@ -43,6 +41,9 @@ const BookingScreen = ({ navigation }) => {
                     <Ionicons name="chevron-down-outline" size={18} style={{ marginTop: 5 }} />
                 </View>
                 <View style={styles.headerRight}>
+                    <TouchableOpacity onPress={() => navigation.navigate("CartScreen")}>
+                        <Ionicons name="cart-outline" size={20} style={{ marginTop: 5 }} />
+                    </TouchableOpacity>
                     <Ionicons name="search-outline" size={20} style={{ marginTop: 5 }} />
                     <Ionicons name="heart-outline" size={20} style={{ marginTop: 5 }} />
                 </View>
