@@ -69,17 +69,18 @@ export default function CartScreen({ navigation }) {
 
                     <View>
                         <TouchableOpacity
-                            style={{ marginTop: 16, flexDirection: "row", justifyContent: "space-between" }}
+                            style={{ marginTop: 16 }}
                         >
                             <View style={{ flexDirection: "row" }}>
                                 <Ionicons name="pencil-outline" size={24} color="#FF7900" />
-                                <View style={{ marginLeft: 16 }}>
+                                <View style={{ marginLeft: 16, flex: 6 }}>
                                     <Text style={styles.price}>x3 Bạc Sỉu</Text>
                                     <Text style={styles.price}>Lớn</Text>
                                 </View>
-                                {/* <Text style={(styles.price, { marginLeft: WIDTH * 0.5 })}>35.000đ</Text> */}
+                                <Text style={styles.price}>35.000đ</Text>
+                                
                             </View>
-                            <Text style={styles.price}>35.000đ</Text>
+                            {/* <Text style={styles.price}>35.000đ</Text> */}
 
                             {/* {cartItems.map((item) => (
                                 <View key={item.id} style={{ flexDirection: "row" }}>
@@ -226,6 +227,10 @@ const styles = StyleSheet.create({
     },
 
     price: {
+        fontSize: 16,
+    },
+
+    cost: {
         fontSize: 16,
     },
 
