@@ -17,6 +17,7 @@ import VoucherScreen from "../Screens/VoucherScreen";
 import AnyScreen from "../Screens/AnyScreen";
 import SignupScreen from "../Screens/SignupScreen";
 import LoginScreen from "../Screens/LoginScreen";
+import StartScreen from "../Screens/StartScreen";
 
 // import Component
 
@@ -92,7 +93,8 @@ export default function AppNavigation() {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Login">
+            <Stack.Navigator initialRouteName="Start">
+                <Stack.Screen name="Start" component={StartScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="MainHome" component={MainTabBar} options={{ headerShown: false }} />
                 <Stack.Screen name="SignUp" component={SignupScreen} options={{ headerShown: false }} />
