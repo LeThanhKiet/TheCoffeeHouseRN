@@ -11,11 +11,7 @@ import AppNavigation from "./src/AppNavigation/route";
 export default function App() {
     return (
         <Provider store={store}>
-            <AppNavigation />;
+            <AppNavigation />
         </Provider>
     );
 }
-
-// export default function App() {
-//     return <AppNavigation />;
-// }

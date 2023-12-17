@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, Dimensions, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 // redux
-// import { useSelector, useDispatch } from "react-redux";
-// import { selectCartItems } from "../Redux/Slice/CartSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectCartItems } from "../Redux/Slice/CartSlice";
 
 export default function CartScreen({ navigation }) {
+    const cartItems = useSelector(selectCartItems);
+    const dispatch = useDispatch();
+
+    console.log(cartItems);
     return (
         <SafeAreaView>
             <View style={styles.header}>
@@ -54,7 +58,11 @@ export default function CartScreen({ navigation }) {
                 <View style={styles.content}>
                     <View style={styles.headerContent}>
                         <Text style={styles.titleContent}>Sảm phẩm đã chọn</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.goBack();
+                            }}
+                        >
                             <Text style={styles.btnContent}>+ Thêm</Text>
                         </TouchableOpacity>
                     </View>
@@ -63,14 +71,16 @@ export default function CartScreen({ navigation }) {
                         <TouchableOpacity
                             style={{ marginTop: 16, flexDirection: "row", justifyContent: "space-between" }}
                         >
-                            {/* <View style={{ flexDirection: "row" }}>
+                            <View style={{ flexDirection: "row" }}>
                                 <Ionicons name="pencil-outline" size={24} color="#FF7900" />
                                 <View style={{ marginLeft: 16 }}>
                                     <Text style={styles.price}>x3 Bạc Sỉu</Text>
                                     <Text style={styles.price}>Lớn</Text>
                                 </View>
+                                {/* <Text style={(styles.price, { marginLeft: WIDTH * 0.5 })}>35.000đ</Text> */}
                             </View>
-                            <Text style={styles.price}>35.000đ</Text> */}
+                            <Text style={styles.price}>35.000đ</Text>
+
                             {/* {cartItems.map((item) => (
                                 <View key={item.id} style={{ flexDirection: "row" }}>
                                     <Ionicons name="pencil-outline" size={24} color="#FF7900" />
@@ -80,6 +90,22 @@ export default function CartScreen({ navigation }) {
                                     </View>
                                 </View>
                             ))} */}
+                            {/* {cartItems.length === 0 ? (
+                                <Text>Giỏ hàng trống!</Text>
+                            ) : (
+                                cartItems.map((item) => (
+                                    <>
+                                        <View key={item.id} style={{ flexDirection: "row" }}>
+                                            <Ionicons name="pencil-outline" size={24} color="#FF7900" />
+                                            <View style={{ marginLeft: 16 }}>
+                                                <Text style={styles.price}>{item.name}</Text>
+                                                <Text style={styles.price}>Lớn</Text>
+                                            </View>
+                                        </View>
+                                        <Text style={styles.price}>35.000đ</Text>
+                                    </>
+                                ))
+                            )} */}
                         </TouchableOpacity>
                     </View>
                 </View>

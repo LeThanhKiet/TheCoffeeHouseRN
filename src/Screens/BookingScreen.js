@@ -7,13 +7,27 @@ import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 
 // redux
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../Redux/Slice/CartSlice";
 
 const BookingScreen = ({ navigation }) => {
     const data = require("../Data/HiTea.json");
 
+    const dispatch = useDispatch();
+
     const renderHiTea = ({ item, index }) => {
         const onNavigate = () => {
             navigation.navigate("ProductDetail", { data: item });
+        };
+
+        const handleAddToCart = () => {
+            const itemGoToCart = {
+                id: item.ID,
+                name: item.Title,
+                price: item.Price,
+            };
+            dispatch(addToCart(itemGoToCart));
+            console.log(itemGoToCart);
         };
 
         return (
@@ -25,7 +39,7 @@ const BookingScreen = ({ navigation }) => {
                     <Text style={styles.Title}>{item.Title}</Text>
                     <Text style={styles.Price}>{item.Price}</Text>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleAddToCart}>
                     <Ionicons name="add-circle-outline" size={35} style={styles.Icon} />
                 </TouchableOpacity>
             </TouchableOpacity>
