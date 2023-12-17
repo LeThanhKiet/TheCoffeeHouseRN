@@ -36,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
                 // Xử lý response từ server tại đây, ví dụ: kiểm tra matchedAccount để xác nhận đăng nhập thành công.
 
                 // Nếu đăng nhập thành công, chuyển đến màn hình
-                navigation.navigate("Home", { apiData: matchedAccount });
+                navigation.navigate("MainHome", { apiData: matchedAccount });
             } else {
                 setError("Tài khoản không hợp lệ. Vui lòng kiểm tra tên đăng nhập và mật khẩu.");
             }
