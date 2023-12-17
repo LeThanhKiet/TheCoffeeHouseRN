@@ -80,11 +80,11 @@ export default function AppNavigation() {
                     },
                 })}
             >
-                <Tab.Screen name="Home" component={HomeScreen}></Tab.Screen>
-                <Tab.Screen name="Booking" component={BookStackScreen}></Tab.Screen>
-                <Tab.Screen name="Store" component={StoreStackScreen}></Tab.Screen>
-                <Tab.Screen name="Voucher" component={VoucherScreen}></Tab.Screen>
-                <Tab.Screen name="Any" component={AnyScreen}></Tab.Screen>
+                <Tab.Screen name="Home" component={HomeScreen} options={{ title: "Trang chủ" }}></Tab.Screen>
+                <Tab.Screen name="Booking" component={BookStackScreen} options={{ title: "Đặt hàng" }}></Tab.Screen>
+                <Tab.Screen name="Store" component={StoreStackScreen} options={{ title: "Cửa hàng" }}></Tab.Screen>
+                <Tab.Screen name="Voucher" component={VoucherScreen} options={{ title: "Ưu đãi" }}></Tab.Screen>
+                <Tab.Screen name="Any" component={AnyScreen} options={{ title: "Khác" }}></Tab.Screen>
             </Tab.Navigator>
         );
     };
