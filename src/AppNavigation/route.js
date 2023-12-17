@@ -51,37 +51,35 @@ export default function AppNavigation() {
     };
 
     return (
-        <NavigationContainer>
-            <Tab.Navigator
-                screenOptions={({ route }) => ({
-                    headerShown: false,
-                    tabBarHideOnKeyboard: true,
-                    tabBarActiveTintColor: "tomato", // bấm vào thì cam
-                    tabBarInactiveTintColor: "gray", // K bấm thì xám
-                    tabBarIcon: ({ focused, color, size }) => {
-                        let iconName;
-                        if (route.name === "Home") {
-                            iconName = focused ? "home" : "home-outline";
-                        } else if (route.name === "Booking") {
-                            iconName = focused ? "cafe" : "cafe-outline";
-                        } else if (route.name === "Store") {
-                            iconName = focused ? "location" : "location-outline";
-                        } else if (route.name === "Voucher") {
-                            iconName = focused ? "cash" : "cash-outline";
-                        } else if (route.name === "Any") {
-                            iconName = focused ? "menu" : "menu-outline";
-                        }
+        <Tab.Navigator
+            screenOptions={({ route }) => ({
+                headerShown: false,
+                tabBarHideOnKeyboard: true,
+                tabBarActiveTintColor: "tomato", // bấm vào thì cam
+                tabBarInactiveTintColor: "gray", // K bấm thì xám
+                tabBarIcon: ({ focused, color, size }) => {
+                    let iconName;
+                    if (route.name === "Home") {
+                        iconName = focused ? "home" : "home-outline";
+                    } else if (route.name === "Booking") {
+                        iconName = focused ? "cafe" : "cafe-outline";
+                    } else if (route.name === "Store") {
+                        iconName = focused ? "location" : "location-outline";
+                    } else if (route.name === "Voucher") {
+                        iconName = focused ? "cash" : "cash-outline";
+                    } else if (route.name === "Any") {
+                        iconName = focused ? "menu" : "menu-outline";
+                    }
 
-                        return <Ionicons name={iconName} size={size} color={color} />;
-                    },
-                })}
-            >
-                <Tab.Screen name="Home" component={HomeScreen}></Tab.Screen>
-                <Tab.Screen name="Booking" component={BookStackScreen}></Tab.Screen>
-                <Tab.Screen name="Store" component={StoreStackScreen}></Tab.Screen>
-                <Tab.Screen name="Voucher" component={VoucherScreen}></Tab.Screen>
-                <Tab.Screen name="Any" component={AnyScreen}></Tab.Screen>
-            </Tab.Navigator>
-        </NavigationContainer>
+                    return <Ionicons name={iconName} size={size} color={color} />;
+                },
+            })}
+        >
+            <Tab.Screen name="Home" component={HomeScreen}></Tab.Screen>
+            <Tab.Screen name="Booking" component={BookStackScreen}></Tab.Screen>
+            <Tab.Screen name="Store" component={StoreStackScreen}></Tab.Screen>
+            <Tab.Screen name="Voucher" component={VoucherScreen}></Tab.Screen>
+            <Tab.Screen name="Any" component={AnyScreen}></Tab.Screen>
+        </Tab.Navigator>
     );
 }

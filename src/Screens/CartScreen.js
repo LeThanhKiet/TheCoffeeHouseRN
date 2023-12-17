@@ -10,12 +10,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart } from "../Redux/action";
 
 export default function CartScreen({ navigation }) {
-    const cartItems = useSelector((state) => state.cart);
-    const dispatch = useDispatch();
+    // const cartItems = useSelector((state) => state.cart);
+    // const dispatch = useDispatch();
 
-    const handleRemoveProduct = (itemId) => {
-        dispatch(removeFromCart(itemId));
-    };
+    // const handleRemoveProduct = (itemId) => {
+    //     dispatch(removeFromCart(itemId));
+    // };
 
     return (
         <SafeAreaView>
@@ -80,7 +80,7 @@ export default function CartScreen({ navigation }) {
                                 </View>
                             </View>
                             <Text style={styles.price}>35.000đ</Text> */}
-                            {cartItems.map((item) => (
+                            {/* {cartItems.map((item) => (
                                 <View key={item.id} style={{ flexDirection: "row" }}>
                                     <Ionicons name="pencil-outline" size={24} color="#FF7900" />
                                     <View style={{ marginLeft: 16 }}>
@@ -88,7 +88,7 @@ export default function CartScreen({ navigation }) {
                                         <Text style={styles.price}>Lớn</Text>
                                     </View>
                                 </View>
-                            ))}
+                            ))} */}
                         </TouchableOpacity>
                     </View>
                 </View>
