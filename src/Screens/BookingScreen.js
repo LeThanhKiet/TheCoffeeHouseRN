@@ -7,7 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 
 // redux
-import { useDispatch } from "react-redux";
 
 const BookingScreen = ({ navigation }) => {
     const data = require("../Data/HiTea.json");

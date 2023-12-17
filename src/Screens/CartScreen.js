@@ -4,12 +4,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 // redux
-import { useSelector, useDispatch } from "react-redux";
-import { selectCartItems } from "../Redux/Slice/CartSlice";
+// import { useSelector, useDispatch } from "react-redux";
+// import { selectCartItems } from "../Redux/Slice/CartSlice";
 
 export default function CartScreen({ navigation }) {
-    const cartItems = useSelector(selectCartItems);
-
     return (
         <SafeAreaView>
             <View style={styles.header}>
