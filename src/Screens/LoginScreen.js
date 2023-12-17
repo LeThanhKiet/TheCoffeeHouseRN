@@ -8,35 +8,40 @@ const LoginScreen = ({ navigation }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [apiData, setApiData] = useState(''); // State để lưu trữ dữ liệu từ API
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         if (!username || !password) {
             setError('Vui lòng điền đầy đủ thông tin.');
             return;
         }
-        console.log('Username:', username);
-        console.log('Password:', password);
+        //console.log('Username:', username);
+        //console.log('Password:', password);
         // Gửi yêu cầu đăng nhập với dữ liệu từ người dùng sử dụng phương thức GET
-        axios.get('https://657de7ca3e3f5b1894635148.mockapi.io/api/user/account', {
-            params: {
-                username: username,
-                password: password,
-            },
-        })
-        .then((response) => {
-            // Kiểm tra xem đăng nhập thành công hay không
-            if (response.data.success) {
-                // Xử lý phản hồi từ API khi đăng nhập thành công
-                navigation.navigate('SignUp');
+
+        try {
+            const response = await axios.get('https://657de7ca3e3f5b1894635148.mockapi.io/api/user/account');
+      
+            const accounts = response.data;
+            const matchedAccount = accounts.find(account => account.username === username && account.password === password);
+      
+            if (matchedAccount) {
+                // Hiển thị thông tin từ API trong console
+                console.log('API Response:', matchedAccount);
+        
+                setApiData(matchedAccount);
+        
+                // Xử lý response từ server tại đây, ví dụ: kiểm tra matchedAccount để xác nhận đăng nhập thành công.
+        
+                // Nếu đăng nhập thành công, chuyển đến màn hình 
+                navigation.navigate('SignUp', { apiData: matchedAccount });
             } else {
-                setError('Tài khoản hoặc mật khẩu không đúng.');
+                setError('Tài khoản không hợp lệ. Vui lòng kiểm tra tên đăng nhập và mật khẩu.');
             }
-        })
-        .catch((error) => {
-            // In ra lỗi nếu có
-            console.error('Đăng nhập thất bại:', error);
-            setError('Đăng nhập thất bại. Vui lòng kiểm tra thông tin đăng nhập.');
-        });
+        } catch (error) {
+            setError('Đăng nhập thất bại. Vui lòng kiểm tra tên đăng nhập và mật khẩu.');
+            console.error('Đăng nhập thất bại', error);
+        }
     };
 
     return (
