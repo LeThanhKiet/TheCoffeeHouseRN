@@ -5,17 +5,10 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-
-// remove form cart
-import { removeFromCart } from "../Redux/action";
+import { selectCartItems } from "../Redux/Slice/CartSlice";
 
 export default function CartScreen({ navigation }) {
-    // const cartItems = useSelector((state) => state.cart);
-    // const dispatch = useDispatch();
-
-    // const handleRemoveProduct = (itemId) => {
-    //     dispatch(removeFromCart(itemId));
-    // };
+    const cartItems = useSelector(selectCartItems);
 
     return (
         <SafeAreaView>

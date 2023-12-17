@@ -8,7 +8,6 @@ import { useState } from "react";
 
 // redux
 import { useDispatch } from "react-redux";
-import { addToCart } from "../Redux/action";
 
 const BookingScreen = ({ navigation }) => {
     const data = require("../Data/HiTea.json");
