@@ -5,11 +5,13 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { selectCartItems, selectCartTotal, removeFromCart, emptyCart } from "../Redux/Slice/CartSlice";
+import { selectCartItems, removeFromCart, emptyCart } from "../Redux/Slice/CartSlice";
 
 export default function CartScreen({ navigation }) {
     const dispatch = useDispatch();
     const cartItems = useSelector(selectCartItems);
+
+    // const total = useSelector(selectCartTotal);
 
     const handleRemoveFromCart = (item) => {
         dispatch(removeFromCart(item.id));
@@ -17,7 +19,12 @@ export default function CartScreen({ navigation }) {
 
     const handleRemoveAllCart = () => dispatch(emptyCart());
 
+    const calculateTotalPrice = () => {
+        return cartItems.reduce((total, item) => total + item.price, 0);
+    };
+
     console.log(cartItems);
+
     return (
         <SafeAreaView>
             <View style={styles.header}>
@@ -102,21 +109,28 @@ export default function CartScreen({ navigation }) {
                             {cartItems.map((item) => (
                                 <View key={item.id}>
                                     <View style={{ flexDirection: "row" }}>
-                                        <Ionicons name="pencil-outline" size={20} color="#FF7900" style={{marginTop: 10}}/>
+                                        <Ionicons
+                                            name="pencil-outline"
+                                            size={20}
+                                            color="#FF7900"
+                                            style={{ marginTop: 10 }}
+                                        />
                                         <View style={{ marginLeft: 16, flex: 6 }}>
-                                            <Text style={styles.price}>x3 {item.name}</Text>
+                                            <Text style={styles.price}>x1 {item.name}</Text>
                                             <Text style={styles.price}>Lớn</Text>
                                         </View>
-                                        <Text style={styles.cost}>{item.price}đ</Text>
+                                        <Text style={styles.cost}>{Intl.NumberFormat("en-US").format(item.price)}đ</Text>
                                         <TouchableOpacity style={{}} onPress={() => handleRemoveFromCart(item)}>
-                                            <Ionicons name="close" size={24} color="#FF7900" style={{marginTop: 10, marginLeft: 5}} />
+                                            <Ionicons
+                                                name="close"
+                                                size={24}
+                                                color="#FF7900"
+                                                style={{ marginTop: 10, marginLeft: 5 }}
+                                            />
                                         </TouchableOpacity>
                                     </View>
                                     <View style={styles.lineCost}></View>
-                                    
                                 </View>
-                                
-                                
                             ))}
                             {/* {cartItems.length === 0 ? (
                                 <Text>Giỏ hàng trống!</Text>
@@ -143,7 +157,7 @@ export default function CartScreen({ navigation }) {
                     <View>
                         <View style={{ paddingVertical: 16, flexDirection: "row", justifyContent: "space-between" }}>
                             <Text style={styles.price}>Thành tiền</Text>
-                            <Text style={styles.price}>125.000đ</Text>
+                            <Text style={styles.price}>{Intl.NumberFormat("en-US").format(calculateTotalPrice())}đ</Text>
                         </View>
                         <View style={styles.line}></View>
                         <View style={{ paddingVertical: 16, flexDirection: "row", justifyContent: "space-between" }}>
@@ -158,7 +172,9 @@ export default function CartScreen({ navigation }) {
                         <View style={styles.line}></View>
                         <View style={{ paddingVertical: 16, flexDirection: "row", justifyContent: "space-between" }}>
                             <Text style={{ fontSize: 16, fontWeight: "bold" }}>Số tiền thanh toán</Text>
-                            <Text style={{ fontWeight: "bold" }}>125.000đ</Text>
+                            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+                                {Intl.NumberFormat("en-US").format(calculateTotalPrice())}đ
+                            </Text>
                         </View>
                     </View>
                 </View>
@@ -173,8 +189,8 @@ export default function CartScreen({ navigation }) {
             </ScrollView>
             <View style={styles.infoBooking}>
                 <View>
-                    <Text style={styles.txtBooking}>Tự đến lấy • 3 sản phẩm</Text>
-                    <Text style={styles.totalPrice}>125.000đ</Text>
+                    <Text style={styles.txtBooking}>Tự đến lấy • {cartItems.length} sản phẩm</Text>
+                    <Text style={styles.totalPrice}>{Intl.NumberFormat("en-US").format(calculateTotalPrice())}đ</Text>
                 </View>
 
                 <TouchableOpacity>
@@ -265,7 +281,7 @@ const styles = StyleSheet.create({
     },
 
     lineCost: {
-        backgroundColor: '#EEE',
+        backgroundColor: "#EEE",
         borderBottomWidth: 0.25,
         margin: 10,
     },

@@ -29,10 +29,15 @@ export const cartSlice = createSlice({
 
 export const { addToCart, removeFromCart, emptyCart } = cartSlice.actions;
 export const selectCartItems = (state) => state.cart.items;
-export const selectCartTotal = (state) => {
-    state.cart.items.reduce((total, item) => {
-        total + item.price, 0;
-    });
-};
+// export const selectCartTotal = (state) => {
+//     try {
+//         state.cart.items.reduce((total, item) => {
+//             total + item.price, 0;
+//         });
+//     } catch {
+//         state.cart.items.price = 0;
+//         console.log("giỏ hàng trống");
+//     }
+// };
 
 export default cartSlice.reducer;
