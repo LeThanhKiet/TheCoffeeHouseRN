@@ -5,17 +5,37 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { selectCartItems } from "../Redux/Slice/CartSlice";
+import { selectCartItems, selectCartTotal, removeFromCart, emptyCart } from "../Redux/Slice/CartSlice";
 
 export default function CartScreen({ navigation }) {
-    const cartItems = useSelector(selectCartItems);
     const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
+
+    const handleRemoveFromCart = (item) => {
+        dispatch(removeFromCart(item.id));
+    };
+
+    const handleRemoveAllCart = () => dispatch(emptyCart());
 
     console.log(cartItems);
     return (
         <SafeAreaView>
             <View style={styles.header}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    // onPress={() => {
+                    //     alert("Xác nhận", "Xóa toàn bộ sản phẩm đã chọn khỏi đơn hàng của bạn?", [
+                    //         { text: "Hủy", style: "cancel" },
+                    //         {
+                    //             text: "Xóa",
+                    //             onPress: () => {
+                    //                 handleRemoveAllCart();
+                    //             },
+                    //         },
+                    //         { cancelable: false },
+                    //     ]);
+                    // }}
+                    onPress={handleRemoveAllCart}
+                >
                     <Text style={{ fontSize: 18, textAlignVertical: "center", color: "#767676", fontWeight: "bold" }}>
                         Xóa
                     </Text>
@@ -68,29 +88,30 @@ export default function CartScreen({ navigation }) {
                     </View>
 
                     <View>
-                        <TouchableOpacity
-                            style={{ marginTop: 16 }}
-                        >
-                            <View style={{ flexDirection: "row" }}>
+                        <View style={{ marginTop: 16 }}>
+                            {/* <View style={{ flexDirection: "row" }}>
                                 <Ionicons name="pencil-outline" size={24} color="#FF7900" />
                                 <View style={{ marginLeft: 16, flex: 6 }}>
                                     <Text style={styles.price}>x3 Bạc Sỉu</Text>
                                     <Text style={styles.price}>Lớn</Text>
                                 </View>
                                 <Text style={styles.price}>35.000đ</Text>
-                                
-                            </View>
+                            </View> */}
                             {/* <Text style={styles.price}>35.000đ</Text> */}
 
-                            {/* {cartItems.map((item) => (
+                            {cartItems.map((item) => (
                                 <View key={item.id} style={{ flexDirection: "row" }}>
                                     <Ionicons name="pencil-outline" size={24} color="#FF7900" />
-                                    <View style={{ marginLeft: 16 }}>
-                                        <Text style={styles.price}>x3 Bạc Sỉu</Text>
+                                    <View style={{ marginLeft: 16, flex: 6 }}>
+                                        <Text style={styles.price}>x3 {item.name}</Text>
                                         <Text style={styles.price}>Lớn</Text>
                                     </View>
+                                    <Text style={styles.price}>{item.price}đ</Text>
+                                    <TouchableOpacity style={{}} onPress={() => handleRemoveFromCart(item)}>
+                                        <Ionicons name="close" size={28} color="#000" style={{}} />
+                                    </TouchableOpacity>
                                 </View>
-                            ))} */}
+                            ))}
                             {/* {cartItems.length === 0 ? (
                                 <Text>Giỏ hàng trống!</Text>
                             ) : (
@@ -107,7 +128,7 @@ export default function CartScreen({ navigation }) {
                                     </>
                                 ))
                             )} */}
-                        </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
 

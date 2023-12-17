@@ -3,8 +3,11 @@ import { Dimensions, Image, View, Text, TextInput, TouchableOpacity, ScrollView,
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { CheckBox, Icon } from "@rneui/base";
-
 import { useState } from "react";
+
+//redux
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../Redux/Slice/CartSlice";
 
 export default function ProductDetail({ navigation, route }) {
     const { data } = route.params;
@@ -61,6 +64,19 @@ export default function ProductDetail({ navigation, route }) {
         setCheckboxStates({ ...checkboxStates, [checkboxName]: !checkboxStates[checkboxName] });
     };
 
+    // add to cart
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+        const itemGoToCart = {
+            id: data.ID,
+            name: data.Title,
+            price: data.Price,
+        };
+        dispatch(addToCart(itemGoToCart));
+        console.log(itemGoToCart);
+    };
+
     return (
         <SafeAreaView style={styles.container}>
             <TouchableOpacity style={styles.closeContainer} onPress={() => navigation.goBack()}>
@@ -77,7 +93,7 @@ export default function ProductDetail({ navigation, route }) {
                             <Text style={styles.productName} numberOfLines={2} ellipsizeMode="tail">
                                 {data?.Title}
                             </Text>
-                            <Text style={styles.price}>{data?.Price} đ</Text>
+                            <Text style={styles.price}>{Intl.NumberFormat("en-US").format(data?.Price)}đ</Text>
                         </View>
 
                         <View>
@@ -93,17 +109,14 @@ export default function ProductDetail({ navigation, route }) {
                     <Text style={{ color: "#767676" }}>Chọn 1 loại size</Text>
                     <View>
                         {optionSize.map((option) => {
-                            let productPrice = parseInt(data.Price);
-                            console.log(typeof data.Price);
-                            console.log(typeof productPrice);
+                            let productPrice = data.Price;
 
-                            // let index;
                             if (option === "Lớn") {
-                                productPrice = productPrice + 20;
+                                productPrice = data.Price + 20000;
                             } else if (option === "Vừa") {
-                                productPrice = productPrice + 10;
+                                productPrice = data.Price + 10000;
                             } else if (option === "Nhỏ") {
-                                productPrice = productPrice;
+                                productPrice = data.Price;
                             }
                             return (
                                 <View style={styles.optionTopping}>
@@ -121,7 +134,7 @@ export default function ProductDetail({ navigation, route }) {
                                     />
                                     {/* <Text style={styles.toppingTitle}>{option}</Text> */}
                                     <Text style={{ fontSize: 15, fontWeight: "bold", textAlignVertical: "center" }}>
-                                        {productPrice}.000đ
+                                        {Intl.NumberFormat("en-US").format(productPrice)}
                                     </Text>
                                 </View>
                             );
@@ -185,8 +198,8 @@ export default function ProductDetail({ navigation, route }) {
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity>
-                    <Text style={styles.add_cart}>Chọn • {total}đ</Text>
+                <TouchableOpacity onPress={handleAddToCart}>
+                    <Text style={styles.add_cart}>Chọn • {Intl.NumberFormat("en-US").format(total)}đ</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

@@ -37,7 +37,7 @@ const BookingScreen = ({ navigation }) => {
                 </View>
                 <View style={styles.about}>
                     <Text style={styles.Title}>{item.Title}</Text>
-                    <Text style={styles.Price}>{item.Price}</Text>
+                    <Text style={styles.Price}>{Intl.NumberFormat("en-US").format(item.Price)}đ</Text>
                 </View>
                 <TouchableOpacity onPress={handleAddToCart}>
                     <Ionicons name="add-circle-outline" size={35} style={styles.Icon} />
