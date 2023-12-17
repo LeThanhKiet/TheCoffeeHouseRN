@@ -29,7 +29,7 @@ const VoucherScreen = () => {
     }
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor: '#E6CCB1'}}>
             <View style={styles.Header}>
                 <Text style={styles.headerText}>Ưu đãi</Text>
                 <Ionicons name="notifications-outline" size={25} style={styles.headerIcon}/>
@@ -63,7 +63,7 @@ const VoucherScreen = () => {
                         <Text  style={styles.btnMore}>Xem tất cả</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={{marginBottom: 40}}>
+                <View style={{marginBottom: 40 }}>
                     <FlatList 
                         data={data.voucherList}
                         renderItem={renderVoucher}
@@ -126,10 +126,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#E7DAC9',
         color: '#FF6600',
         fontWeight: 'bold',
-        borderRadius: 36,
+        borderRadius: 40,
     }, 
     voucher: {
-        marginBottom: 5,
+        marginBottom: 10,
         marginLeft: 15,
         marginRight: 15,
         padding: 15,

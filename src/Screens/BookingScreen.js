@@ -47,7 +47,7 @@ const BookingScreen = ({ navigation }) => {
     };
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor: '#E6CCB1'}}>
             <View style={styles.header}>
                 <View style={styles.headerLeft}>
                     <Text style={styles.headerText}>Danh Mục</Text>
@@ -63,42 +63,59 @@ const BookingScreen = ({ navigation }) => {
             </View>
             <View style={styles.line}></View>
             <ScrollView>
-                <View>
+            <View>
                     <View style={styles.category}>
-                        <View style={styles.categoryItem}>
-                            <Image style={styles.Img} source={require("../images/mon_phai_thu.png")} />
-                            <Text style={styles.categoryText}>Món mới phải thử</Text>
-                        </View>
-                        <View style={styles.categoryItem}>
-                            <Image style={styles.Img} source={require("../images/ic-tra-trai-cay.png")} />
-                            <Text style={styles.categoryText}>Trà trái cây - HiTea</Text>
-                        </View>
-                        <View style={styles.categoryItem}>
-                            <Image style={styles.Img} source={require("../images/cloudtea.png")} />
-                            <Text style={styles.categoryText}>Trà sữa - CloudTea</Text>
-                        </View>
-                        <View style={styles.categoryItem}>
-                            <Image style={styles.Img} source={require("../images/cloudtea.png")} />
-                            <Text style={styles.categoryText}>Trà xanh - Chocolate</Text>
-                        </View>
+                        <TouchableOpacity style={styles.categoryItem}>
+                            <View>
+                                <Image style={styles.Img} source={require("../images/mon_phai_thu.png")} />
+                                <Text style={styles.categoryText}>Món mới phải thử</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryItem}>
+                            <View>
+                                <Image style={styles.Img} source={require("../images/ic-tra-trai-cay.png")} />
+                                <Text style={styles.categoryText}>Trà trái cây - HiTea</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryItem}>
+                            <View>
+                                <Image style={styles.Img} source={require("../images/cloudtea.png")} />
+                                <Text style={styles.categoryText}>Trà sữa - CloudTea</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryItem}>
+                            <View>
+                                <Image style={styles.Img} source={require("../images/cloudtea.png")} />
+                                <Text style={styles.categoryText}>Trà xanh - Chocolate</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.category}>
-                        <View style={styles.categoryItem}>
-                            <Image style={styles.Img} source={require("../images/caphe.png")} />
-                            <Text style={styles.categoryText}>Đá xay Frosty</Text>
-                        </View>
-                        <View style={styles.categoryItem}>
-                            <Image style={styles.Img} source={require("../images/frosty.png")} />
-                            <Text style={styles.categoryText}>Cà phê - CloudFee</Text>
-                        </View>
-                        <View style={styles.categoryItem}>
-                            <Image style={styles.Img} source={require("../images/banhngot.png")} />
-                            <Text style={styles.categoryText}>Bánh ngọt</Text>
-                        </View>
-                        <View style={styles.categoryItem}>
-                            <Image style={styles.Img} source={require("../images/banhman.png")} />
-                            <Text style={styles.categoryText}>Bánh mặn</Text>
-                        </View>
+                        <TouchableOpacity style={styles.categoryItem}>
+                            <View>
+                                <Image style={styles.Img} source={require("../images/caphe.png")} />
+                                <Text style={styles.categoryText}>Đá xay Frosty</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryItem}>
+                            <View>
+                                <Image style={styles.Img} source={require("../images/frosty.png")} />
+                                <Text style={styles.categoryText}>Cà phê - CloudFee</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryItem}>
+                            <View>
+                                <Image style={styles.Img} source={require("../images/banhngot.png")} />
+                                <Text style={styles.categoryText}>Bánh ngọt</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.categoryItem}>
+                            <View>
+                                <Image style={styles.Img} source={require("../images/banhman.png")} />
+                                <Text style={styles.categoryText}>Bánh mặn</Text>
+                            </View>
+                        </TouchableOpacity>
+                        
                     </View>
                 </View>
 
@@ -171,6 +188,7 @@ const styles = StyleSheet.create({
         width: 76,
         height: 75,
         borderRadius: 50,
+        paddingLeft: 10,
     },
     categoryText: {
         width: 75,
@@ -194,6 +212,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         height: 120,
         width: 130,
+        marginLeft: 10,
     },
     about: {
         flex: 4,

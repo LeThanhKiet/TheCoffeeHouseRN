@@ -8,10 +8,10 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 
-const AnyScreen = () => {
+const AnyScreen = ({ navigation }) => {
     return (
-        <SafeAreaView>
-            <ScrollView>
+        <SafeAreaView style={{backgroundColor: '#E6CCB1'}}>
+            <ScrollView style={{backgroundColor: '#E6CCB1'}}>
                 <View style={styles.container}>
                     <Text style={styles.title}>Tiện ích</Text>
                     <View>
@@ -68,6 +68,7 @@ const AnyScreen = () => {
                     <Text style={styles.title}>Tài khoản</Text>
 
                     <View style={styles.btnGroup}>
+                        <View style={styles.line}></View>
                         <TouchableOpacity>
                             <View style={styles.btnItem}>
                                 <View style={{flexDirection: 'row',}}>
@@ -99,7 +100,11 @@ const AnyScreen = () => {
                         </TouchableOpacity>
                         <View style={styles.line}></View>
 
-                        <TouchableOpacity style={styles.btnItem}>
+                        <TouchableOpacity 
+                            onPress={() => {
+                                navigation.navigate('Login')
+                            }}
+                            style={styles.btnItem}>
                             <View style={{flexDirection: 'row',}}>
                                 <Ionicons name="log-out-outline" size={18} color="#000" />
                                 <Text style={styles.btnInfo}>Đăng xuất</Text>
@@ -131,8 +136,8 @@ const styles = StyleSheet.create({
     },
     container: {
         paddingHorizontal: 16,
-        paddingBottom: 16,
-        backgroundColor: '#EEE',
+        marginBottom: 100,
+        backgroundColor: '#E6CCB1',
     },
     title: {
         marginVertical: 16,

@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         backgroundColor: "#FF7900",
         position: "absolute",
-        marginTop: 650,
+        marginTop: "165%",
         width: "100%",
         borderRadius: 5,
     },

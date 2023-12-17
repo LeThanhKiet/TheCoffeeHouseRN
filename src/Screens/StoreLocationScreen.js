@@ -26,7 +26,7 @@ export default function StoreLocationScreen({ item, index }) {
     const ListHeader = () => {
         return (
             <View>
-                <View style={{ backgroundColor: "#fff", flexDirection: "row" }}>
+                <View style={{ backgroundColor: "#E6CCB1", flexDirection: "row" }}>
                     <View>
                         <Ionicons name="search-outline" size={20} color="#000" style={styles.icon} />
                         <TextInput style={styles.input} placeholder="Tìm kiếm" />
@@ -59,7 +59,7 @@ export default function StoreLocationScreen({ item, index }) {
         );
     };
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor: '#E6CCB1'}}>
             <View>
                 <FlatList
                     ListHeaderComponent={ListHeader}

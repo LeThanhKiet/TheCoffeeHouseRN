@@ -91,6 +91,7 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#E6CCB1',
     },
 
     Header: {
@@ -110,17 +111,18 @@ const styles = StyleSheet.create({
     },
 
     content: {
+        marginTop: 15,
         backgroundColor: "#FFF",
         borderTopLeftRadius: 16,
         borderTopRightRadius: 16,
         shadowColor: "#000",
-        shadowOpacity: 1,
+        shadowOpacity: 0.4,
         elevation: 24,
     },
 
     scroll: {
         backgroundColor: "#DDD",
-        margin: 8,
+        margin: 6,
         alignSelf: "center",
         width: 40,
         height: 6,
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "#CCC",
         borderRadius: 8,
-        marginTop: 10,
+        marginTop: 7,
         marginBottom: 16,
         flexDirection: "row",
         justifyContent: "space-around",
@@ -155,16 +157,16 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     btnDiscovery: {
+        marginBottom: 10,
         paddingRight: 15,
         color: '#000',
         textAlign: 'center',
         fontWeight: '500',
         fontSize: 17,
-        padding: 5,
+        padding: 6,
     },
     activeBtnDiscovery: {
         color: '#FF7900',
-        backgroundColor: '#EEE',
         borderRadius: 20,
     },
 });

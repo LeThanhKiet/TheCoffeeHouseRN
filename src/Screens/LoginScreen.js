@@ -94,7 +94,7 @@ const LoginScreen = ({ navigation }) => {
                         }}
                     >
                         <Text style={styles.formFooter}>
-                            Bạn chưa có tài khoản? <Text style={{ textDecorationLine: "underline" }}>Đăng kí</Text>
+                            Bạn chưa có tài khoản? <Text style={{ textDecorationLine: "underline", color: "#007aff" }}>Đăng kí</Text>
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -164,8 +164,8 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         paddingHorizontal: 16,
         borderWidth: 1,
-        backgroundColor: "#007aff",
-        borderColor: "#007aff",
+        backgroundColor: "#e57905",
+        borderColor: "#e57905",
     },
     btnText: {
         fontSize: 17,

@@ -126,7 +126,7 @@ const SignupScreen = () => {
                         }}>
                         <Text style={styles.formFooter}>
                             Bạn đã có tài khoản?{' '}
-                            <Text style={{ textDecorationLine: 'underline' }}>Đăng nhập</Text>
+                            <Text style={{ textDecorationLine: 'underline', color: "#007aff" }}>Đăng nhập</Text>
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -166,11 +166,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#1d1d1d',
         marginBottom: 6,
+        textAlign: 'center',
     },
         subtitle: {
-        fontSize: 14,
+        fontSize: 16,
         fontWeight: '500',
-        color: '#929292',
+        color: '#6F6E6D',
+        textAlign: 'center',
     },
         input: {
         marginBottom: 16,
@@ -198,8 +200,8 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         paddingHorizontal: 16,
         borderWidth: 1,
-        backgroundColor: '#007aff',
-        borderColor: '#007aff',
+        backgroundColor: "#e57905",
+        borderColor: "#e57905",
     },
     errorText: {
         color: 'red',
