@@ -60,7 +60,7 @@ const VoucherScreen = () => {
                 <View style={styles.content}>
                     <Text style={styles.titleContent}>Phiếu ưu đãi của bạn</Text>
                     <TouchableOpacity>
-                        <Text  style={styles.btnMore}>Xem tất cả</Text>
+                        <Text style={styles.btnMore}>Xem tất cả</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{marginBottom: 40 }}>

@@ -77,7 +77,7 @@ export default function CartScreen({ navigation }) {
 
                 <View style={styles.content}>
                     <View style={styles.headerContent}>
-                        <Text style={styles.titleContent}>Sảm phẩm đã chọn</Text>
+                        <Text style={styles.titleContent}>Sản phẩm đã chọn</Text>
                         <TouchableOpacity
                             onPress={() => {
                                 navigation.goBack();
@@ -100,17 +100,23 @@ export default function CartScreen({ navigation }) {
                             {/* <Text style={styles.price}>35.000đ</Text> */}
 
                             {cartItems.map((item) => (
-                                <View key={item.id} style={{ flexDirection: "row" }}>
-                                    <Ionicons name="pencil-outline" size={24} color="#FF7900" />
-                                    <View style={{ marginLeft: 16, flex: 6 }}>
-                                        <Text style={styles.price}>x3 {item.name}</Text>
-                                        <Text style={styles.price}>Lớn</Text>
+                                <View key={item.id}>
+                                    <View style={{ flexDirection: "row" }}>
+                                        <Ionicons name="pencil-outline" size={20} color="#FF7900" style={{marginTop: 10}}/>
+                                        <View style={{ marginLeft: 16, flex: 6 }}>
+                                            <Text style={styles.price}>x3 {item.name}</Text>
+                                            <Text style={styles.price}>Lớn</Text>
+                                        </View>
+                                        <Text style={styles.cost}>{item.price}đ</Text>
+                                        <TouchableOpacity style={{}} onPress={() => handleRemoveFromCart(item)}>
+                                            <Ionicons name="close" size={24} color="#FF7900" style={{marginTop: 10, marginLeft: 5}} />
+                                        </TouchableOpacity>
                                     </View>
-                                    <Text style={styles.price}>{item.price}đ</Text>
-                                    <TouchableOpacity style={{}} onPress={() => handleRemoveFromCart(item)}>
-                                        <Ionicons name="close" size={28} color="#000" style={{}} />
-                                    </TouchableOpacity>
+                                    <View style={styles.lineCost}></View>
+                                    
                                 </View>
+                                
+                                
                             ))}
                             {/* {cartItems.length === 0 ? (
                                 <Text>Giỏ hàng trống!</Text>
@@ -249,10 +255,19 @@ const styles = StyleSheet.create({
 
     price: {
         fontSize: 16,
+        fontWeight: "600",
     },
 
     cost: {
-        fontSize: 16,
+        fontSize: 17,
+        fontWeight: "600",
+        marginTop: 10,
+    },
+
+    lineCost: {
+        backgroundColor: '#EEE',
+        borderBottomWidth: 0.25,
+        margin: 10,
     },
 
     select: {

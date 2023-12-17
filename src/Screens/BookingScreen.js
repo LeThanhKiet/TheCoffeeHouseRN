@@ -55,10 +55,10 @@ const BookingScreen = ({ navigation }) => {
                 </View>
                 <View style={styles.headerRight}>
                     <TouchableOpacity onPress={() => navigation.navigate("CartScreen")}>
-                        <Ionicons name="cart-outline" size={20} style={{ marginTop: 5 }} />
+                        <Ionicons name="cart-sharp" size={24} color="#FF7900" style={{ marginTop: 5 }} />
                     </TouchableOpacity>
-                    <Ionicons name="search-outline" size={20} style={{ marginTop: 5 }} />
-                    <Ionicons name="heart-outline" size={20} style={{ marginTop: 5 }} />
+                    <Ionicons name="search-outline" size={24} color="gray" style={{ marginTop: 5 }} />
+                    <Ionicons name="heart-sharp" size={24} color="#E73F1C" style={{ marginTop: 5}} />
                 </View>
             </View>
             <View style={styles.line}></View>
@@ -149,6 +149,8 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        paddingBottom: 10,
+        paddingTop: 10,
     },
     headerLeft: {
         display: "flex",
@@ -156,20 +158,21 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
     },
     headerText: {
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: "bold",
     },
     headerRight: {
         display: "flex",
         flexDirection: "row",
-        marginRight: 30,
-        width: 50,
+        marginRight: 20,
+        width: 90,
         justifyContent: "space-between",
     },
     line: {
         backgroundColor: "#9A9C9E",
         borderBottomWidth: 0.25,
         marginTop: 10,
+        marginBottom: 10,
     },
 
     category: {

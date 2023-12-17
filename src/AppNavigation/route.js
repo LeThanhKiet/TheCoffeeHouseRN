@@ -79,6 +79,7 @@ export default function AppNavigation() {
                         return <Ionicons name={iconName} size={size} color={color} />;
                     },
                 })}
+                
             >
                 <Tab.Screen name="Home" component={HomeScreen} options={{ title: "Trang chủ" }}></Tab.Screen>
                 <Tab.Screen name="Booking" component={BookStackScreen} options={{ title: "Đặt hàng" }}></Tab.Screen>
