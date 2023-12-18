@@ -4,8 +4,8 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 const StartScreen = ({ navigation }) => {
     useEffect(() => {
         const timeout = setTimeout(() => {
-        navigation.navigate('Login'); // Thay 'LoginScreen' bằng tên màn hình đăng nhập của bạn
-        }, 3000); // 3000 milliseconds = 3 seconds
+        navigation.navigate('Login'); 
+        }, 3000); 
 
         return () => clearTimeout(timeout); // Clear timeout nếu component bị unmounted
     }, [navigation]);
