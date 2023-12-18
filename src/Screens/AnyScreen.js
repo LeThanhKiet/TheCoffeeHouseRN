@@ -102,7 +102,7 @@ const AnyScreen = ({ navigation }) => {
 
                         <TouchableOpacity 
                             onPress={() => {
-                                navigation.navigate('Login')
+                                navigation.navigate('SignUp');
                             }}
                             style={styles.btnItem}>
                             <View style={{flexDirection: 'row',}}>

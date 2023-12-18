@@ -90,7 +90,7 @@ export default function ProductDetail({ navigation, route }) {
                 <View style={{ backgroundColor: "#fff", padding: 16 }}>
                     <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                         <View>
-                            <Text style={styles.productName} numberOfLines={2} ellipsizeMode="tail">
+                            <Text style={styles.productName} ellipsizeMode="tail">
                                 {data?.Title}
                             </Text>
                             <Text style={styles.price}>{Intl.NumberFormat("en-US").format(data?.Price)}đ</Text>
